@@ -14,12 +14,9 @@ Code for 選挙プロジェクトは、2017年衆議院選挙候補者のオー�
 * 郵便番号を入れるだけで、該当選挙区の候補者が表示され、その候補者の実績及び政策がわかるサイトを作る
 * 候補者のデータは Popolo 形式で整備する
 * 上記データはWikidataにも投入する
-     * Wikidataの情報（参考資料）
-https://docs.google.com/spreadsheets/d/1ibTdsVo57EykrWKOOBSkcoJSVD-7jSGNMnN3QzmFvYI/edit#gid=537811440
-     * 2006年松戸市長選挙：
-https://www.wikidata.org/wiki/Q29422608
-     * 2014年松戸市議会議員選挙：
-https://www.wikidata.org/wiki/Q29423018
+     * [Wikidataの情報（参考資料）](https://docs.google.com/spreadsheets/d/1ibTdsVo57EykrWKOOBSkcoJSVD-7jSGNMnN3QzmFvYI/edit#gid=537811440)
+     * [2006年松戸市長選挙](https://www.wikidata.org/wiki/Q29422608)
+     * [2014年松戸市議会議員選挙](https://www.wikidata.org/wiki/Q29423018)
 * データは二次利用可能な形で公開する
 * データ作成はなるべく参加型にしたい（事実情報のみを積み上げ、荒らしや政治色は排除する）
 
@@ -29,7 +26,7 @@ https://www.wikidata.org/wiki/Q29423018
 ## 現状のステータス
 
 まだプロジェクトは立ち上がったばかりであり、ダウンロードできるデータはありません。参加できるメンバーを募集しています。
-実際のデータ収集プログラムは、[Github ページ](https://github.com/codeforjapan/codeforelection)で開発を開始しています。
+実際のデータ収集プログラムは、[こちらの Github リポジトリ](https://github.com/codeforjapan/codeforelection)で開発を開始しています。
 
 ## メンバー
 
