@@ -14,7 +14,6 @@ Code for 選挙プロジェクトは、2017年衆議院選挙候補者のオー�
 * 郵便番号を入れるだけで、該当選挙区の候補者が表示され、その候補者の実績及び政策がわかるサイトを作る
 * 候補者のデータは Popolo 形式で整備する
 * 上記データはWikidataにも投入する
-＜参考＞
      * Wikidataの情報（参考資料）
 https://docs.google.com/spreadsheets/d/1ibTdsVo57EykrWKOOBSkcoJSVD-7jSGNMnN3QzmFvYI/edit#gid=537811440
      * 2006年松戸市長選挙：
@@ -22,27 +21,28 @@ https://www.wikidata.org/wiki/Q29422608
      * 2014年松戸市議会議員選挙：
 https://www.wikidata.org/wiki/Q29423018
 * データは二次利用可能な形で公開する
-* なるべく参加型にしたい（事実情報のみを積み上げ、荒らしや政治色は排除する）
+* データ作成はなるべく参加型にしたい（事実情報のみを積み上げ、荒らしや政治色は排除する）
 
-詳しくは、以下のページをご確認ください
-https://hackmd.io/s/rkXhmQjjW
+詳しくは、以下のページをご確認ください  
+[情報まとめページ](https://hackmd.io/s/rkXhmQjjW)
 
 ## 現状のステータス
 
 まだプロジェクトは立ち上がったばかりであり、ダウンロードできるデータはありません。参加できるメンバーを募集しています。
-実際のデータ収集プログラムは、以下の Github ページで開発を開始しています。
-https://github.com/codeforjapan/codeforelection
+実際のデータ収集プログラムは、[Github ページ](https://github.com/codeforjapan/codeforelection)で開発を開始しています。
 
 ## メンバー
 
 一般社団法人Code for Japan 及び有志メンバーによって開発されています。
-メンバーについては以下をご確認ください。
-https://hackmd.io/s/rkXhmQjjW
+メンバーについては[情報まとめページ](https://hackmd.io/s/rkXhmQjjW)をご確認ください。
 
 ## コントリビューター募集中
 
-https://hackmd.io/s/rkXhmQjjW 内にかかれている、Slack チャンネルから議論に参加できます。
+このプロジェクトには、誰でも貢献ができます。
+今の政治の状況に対して声をあげるのも大事ですが、実際に手を動かすことで、政治家の実際の活動の見える化に協力しませんか？
+各候補者の、過去の国会での発言や政策など、事実情報を淡々と積み上げることで、多くの人が正しい投票を行うサポートができるはずです。
 
+[情報まとめページ](https://hackmd.io/s/rkXhmQjjW) 内にかかれている、Slack チャンネルから議論に参加できます。
 
 ### お問い合わせ
 
