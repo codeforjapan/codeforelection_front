@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+## Code for 選挙プロジェクトへようこそ
 
-You can use the [editor on GitHub](https://github.com/codeforjapan/codeforelection_front/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Code for 選挙プロジェクトは、2017年衆議院選挙候補者のオープンなデータベースを作成し、候補者の政策及び過去の実績を中立的に参照できるサイトを制作することを目的としたプロジェクトです。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 色々ある選挙速報サイトとは何が違うのか
 
-### Markdown
+我々が作るデータは、オープンで二次利用可能とします。
+データのダウンロードも可能とします。
+また、政治家に関する世界標準形式である、Popolo というデータフォーマットでデータを整備します。
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## 具体的に何をしたいのか
 
-```markdown
-Syntax highlighted code block
+* 郵便番号を入れるだけで、該当選挙区の候補者が表示され、その候補者の実績及び政策がわかるサイトを作る
+* 候補者のデータは Popolo 形式で整備する
+* 上記データはWikidataにも投入する
+＜参考＞
+     * Wikidataの情報（参考資料）
+https://docs.google.com/spreadsheets/d/1ibTdsVo57EykrWKOOBSkcoJSVD-7jSGNMnN3QzmFvYI/edit#gid=537811440
+     * 2006年松戸市長選挙：
+https://www.wikidata.org/wiki/Q29422608
+     * 2014年松戸市議会議員選挙：
+https://www.wikidata.org/wiki/Q29423018
+* データは二次利用可能な形で公開する
+* なるべく参加型にしたい（事実情報のみを積み上げ、荒らしや政治色は排除する）
 
-# Header 1
-## Header 2
-### Header 3
+詳しくは、以下のページをご確認ください
+https://hackmd.io/s/rkXhmQjjW
 
-- Bulleted
-- List
+## 現状のステータス
 
-1. Numbered
-2. List
+まだプロジェクトは立ち上がったばかりであり、ダウンロードできるデータはありません。参加できるメンバーを募集しています。
+実際のデータ収集プログラムは、以下の Github ページで開発を開始しています。
+https://github.com/codeforjapan/codeforelection
 
-**Bold** and _Italic_ and `Code` text
+## メンバー
 
-[Link](url) and ![Image](src)
-```
+一般社団法人Code for Japan 及び有志メンバーによって開発されています。
+メンバーについては以下をご確認ください。
+https://hackmd.io/s/rkXhmQjjW
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## コントリビューター募集中
 
-### Jekyll Themes
+https://hackmd.io/s/rkXhmQjjW 内にかかれている、Slack チャンネルから議論に参加できます。
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/codeforjapan/codeforelection_front/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+### お問い合わせ
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+info@code4japan.org までご連絡ください
