@@ -23,9 +23,32 @@ Code for 選挙プロジェクトは、2017年衆議院選挙候補者のオー�
 詳しくは、以下のページをご確認ください  
 [情報まとめページ](https://hackmd.io/s/rkXhmQjjW)
 
-## 現状のステータス
 
-まだプロジェクトは立ち上がったばかりであり、ダウンロードできるデータはありません。参加できるメンバーを募集しています。
+## 作成したデータについて
+
+### 郵便番号-小選挙区検索データ
+- 7桁の郵便番号（事業所番号は除く）から、対応する289選挙区への対応を取れるオープンデータを作成しました。
+- データ仕様
+  - 郵便番号をキーとして格納
+  - 該当郵便番号の基礎自治体の行政コード、および小選挙区番号が含まれます
+  - 都道府県は行政コードからご利用ください。
+```json
+{
+  "1050000":{"cityCode":"13103","senkyoNum":"1"},
+  "1050001":{"cityCode":"13103","senkyoNum":"2"},
+  "1050002":{"cityCode":"13103","senkyoNum":"2"},
+  //以下略
+}
+
+```
+- [ダウンロード](https://github.com/codeforjapan/codeforelection/blob/master/data/json/postal2senkyoku.json)
+- [データに関するREADME](https://github.com/codeforjapan/codeforelection/blob/master/data/README.md)
+- [利用データ/東大西沢先生作成小選挙区データ](http://www.csis.u-tokyo.ac.jp/~nishizawa/senkyoku/)
+- [利用データ/郵便番号](http://www.post.japanpost.jp/zipcode/download.html)
+
+
+## 実際の作業について
+
 実際のデータ収集プログラムは、[こちらの Github リポジトリ](https://github.com/codeforjapan/codeforelection)で開発を開始しています。
 
 ## メンバー
