@@ -95,3 +95,13 @@ Code for 選挙プロジェクトは、2017年衆議院選挙候補者のオー�
 ### お問い合わせ
 
 info@code4japan.org までご連絡ください
+
+### ライセンス
+
+#### データ：[CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.ja)
+* [郵便番号-小選挙区検索データ](https://github.com/codeforjapan/codeforelection/blob/master/data/json/postal2senkyoku.json)
+* [郵便番号-小選挙区検索データ（軽量版）](https://github.com/codeforjapan/codeforelection/blob/master/data/json/postal2senkyoku.light.json)
+
+#### リポジトリ内コード：[MIT](https://github.com/codeforjapan/codeforelection_front/blob/master/LICENSE)
+
+#### サイト文章部分：[CC BY 4.0 international](https://creativecommons.org/licenses/by/4.0/deed.ja)
