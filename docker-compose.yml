@@ -3,7 +3,7 @@ services:
   db:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: 'p@ssword'
+      MYSQL_ROOT_PASSWORD: 'cfje_pw1'
       TZ: 'Asia/Tokyo'
     ports:
       - 3306:3306
@@ -11,7 +11,7 @@ services:
     build: .
     command: bundle exec foreman start -f Procfile.dev
     volumes:
-      - .:/cfj_election_front
+      - .:/codeforelection_front
     ports:
       - '3000:3000'
       - '8000:8000'

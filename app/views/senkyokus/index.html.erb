@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Senkyokus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pref code</th>
+      <th>Senkyoku no</th>
+      <th>Zip code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @senkyokus.each do |senkyoku| %>
+      <tr>
+        <td><%= senkyoku.pref_code %></td>
+        <td><%= senkyoku.senkyoku_no %></td>
+        <td><%= senkyoku.zip_code %></td>
+        <td><%= link_to 'Show', senkyoku %></td>
+        <td><%= link_to 'Edit', edit_senkyoku_path(senkyoku) %></td>
+        <td><%= link_to 'Destroy', senkyoku, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Senkyoku', new_senkyoku_path %>

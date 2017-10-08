@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
 RUN curl -sL https://deb.nodesource.com/setup_7.x | bash - && apt-get install nodejs
 
 # ワークディレクトリ設定
-ENV ROOT_PATH /cfj_election_front
+ENV ROOT_PATH /codeforelection_front
 RUN mkdir $ROOT_PATH
 WORKDIR $ROOT_PATH
 ADD Gemfile $ROOT_PATH/Gemfile

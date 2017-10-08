@@ -1,0 +1,32 @@
+<%= form_with(model: senkyoku, local: true) do |form| %>
+  <% if senkyoku.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(senkyoku.errors.count, "error") %> prohibited this senkyoku from being saved:</h2>
+
+      <ul>
+      <% senkyoku.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pref_code %>
+    <%= form.text_field :pref_code, id: :senkyoku_pref_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :senkyoku_no %>
+    <%= form.number_field :senkyoku_no, id: :senkyoku_senkyoku_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip_code %>
+    <%= form.text_field :zip_code, id: :senkyoku_zip_code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
