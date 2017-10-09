@@ -14,9 +14,9 @@
 <hr />
 
 <h2>molecules</h2>
-<div class="search-bar">
-    <input type="text" class="typo-2" />
-    <i class="fa fa-search" aria-hidden="true"></i>
+<%= render partial:'layouts/m/searchbar', locals: {propName:'prop', placeHolder:'郵便番号', val:''} %>
+<div class="person">
+    <img src="/assets/Person@2x.png" />
 </div>
 
 <h2>organisms</h2>
