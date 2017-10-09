@@ -18,7 +18,6 @@
 <%= render partial:'layouts/molecules/person', locals: {src: '/assets/Person@2x.png'} %>
 
 <h2>organisms</h2>
-<<<<<<< Updated upstream
 <%= render partial:'layouts/organisms/person-item',
 locals: {
     party: '甘党',
@@ -30,16 +29,11 @@ locals: {
 } %>
 
 <h2>Block</h2>
-<div class="person-block">
-  <div class="profile">
-    <div class="typo-text-1">僕は甘党</div>
-    <div class="column">
-        <div class="typo-2 person-name">山田太郎</div>
-        <div class="typo-text-1 person-age">30</div>
-    </div>
-    <div class="typo-text-1">ニート</div>
-  </div>
-  <div class="person">
-      <img src="/assets/Person@2x.png" />
-  </div>
-</div>
+<%= render partial:'layouts/organisms/person-block',
+locals: {
+    party: '甘党',
+    name: '山田太郎',
+    age: '30',
+    job: 'ニート',
+    image: '/assets/Person@2x.png'
+} %>
