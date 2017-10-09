@@ -2,7 +2,7 @@
 lock '3.7.2'
 
 set :application, 'codeforelection_front'
-set :repo_url, 'git@github.com:codeforjapan/codeforelection_front.git'
+set :repo_url, 'https://github.com/codeforjapan/codeforelection_front.git'
 
 # rvmの設定
 set :rvm_type, :system
@@ -14,7 +14,7 @@ set :rvm1_ruby_version, '2.4.2'
 #set :rbenv_roles, :all
 
 # Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, 'production'
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, '/var/www/my_app_name'
@@ -46,7 +46,6 @@ set :keep_releases, 3
 set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"
 
 namespace :deploy do
-
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
@@ -55,5 +54,16 @@ namespace :deploy do
       # end
     end
   end
+
+  desc 'Seeds database'
+  task :seed do
+    on roles(:app) do
+      invoke 'rvm1:hook'
+      within release_path do
+        execute :bundle, :exec, :"rails db:seed RAILS_ENV=#{fetch(:stage)}"
+      end
+    end
+  end
+  after :finished, 'deploy:seed'
 
 end

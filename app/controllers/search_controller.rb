@@ -1,15 +1,15 @@
 class SearchController < ApplicationController
 
-  def new
+  def index
   end
 
   def show
-    senkyoku = Senkyoku.where("zip_code LIKE (?)", params[:zip_code])
+    senkyoku = Senkyoku.where("zip_code LIKE (?)", search_params[:zip_code])
 
     if senkyoku.count > 0
       @senkyoku = senkyoku.first
     else
-      @senkyoku = Senkyoku.where("zip_code LIKE (?)", params[:zip_code][0..2]).first
+      @senkyoku = Senkyoku.where("zip_code LIKE (?)", search_params[:zip_code][0..2]).first
     end
 
   end
@@ -18,7 +18,7 @@ class SearchController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def search_params
-      params.require(:search).permit(:pref_code)
+      params.permit(:zip_code)
     end
 
 end

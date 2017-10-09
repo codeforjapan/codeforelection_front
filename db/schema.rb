@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171008021837) do
+ActiveRecord::Schema.define(version: 20171009105609) do
+
+  create_table "candidates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name_first", null: false
+    t.string "name_last", null: false
+    t.string "name_first_furigana"
+    t.string "name_last_furigana"
+    t.integer "party_id"
+    t.integer "senkyoku_id"
+    t.integer "gender"
+    t.date "birth_day"
+    t.integer "birth_year"
+    t.string "twitter_id"
+    t.string "facebook_id"
+    t.string "official_website_url"
+    t.string "photo_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "wikidata_id"
+    t.index ["wikidata_id"], name: "index_candidates_on_wikidata_id", unique: true
+  end
+
+  create_table "parties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "short_name", null: false
+    t.string "full_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "prefs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "pref_code", null: false

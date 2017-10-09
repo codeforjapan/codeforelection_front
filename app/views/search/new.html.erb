@@ -1,7 +1,8 @@
 <h1>Code for 選挙</h1>
 
 <%= form_tag("/search", method: "get") do %>
-  <%= render :partial=>'layouts/molecules/searchbar', :locals=>{ propName:"zip_code",placeHolder:'郵便番号', val:'値'} %>
+  <%= label_tag(:zip_code, "郵便番号:") %>
+  <%= text_field_tag(:zip_code) %>
   <%= submit_tag("Search") %>
 <% end %>
 

@@ -1,2 +1,27 @@
-<!-- <p><%= params[:zip_code] %></p> -->
 <%= render :partial=>'layouts/organisms/list-header', :locals=>{ senkyokuName: @senkyoku.name} %>
+<p><%= params[:zip_code] %></p>
+
+<% if @senkyoku.present? %>
+<p><%= @senkyoku.name %></p>
+
+<ul>
+<% @senkyoku.candidates.each do | candidate | %>
+  <li>
+  	公認政党:<%= candidate.party.try(:short_name) || "無所属" %>
+  	first name:<%= candidate.name_first %><br />
+  	last name: <%= candidate.name_last %><br />
+  	first name(かな):<%= candidate.name_first_furigana %><br />
+  	last name(かな): <%= candidate.name_last_furigana %><br />
+  	age: <%= candidate.age %><br />
+    full name:<%= candidate.full_name %><br />
+    full name(かな)<%= candidate.full_name_furigana %><br />
+    <%= link_to "リンク", candidate_path(id: candidate.wikidata_id) %>
+  </li>
+<% end %>
+
+<% else %>
+
+<p>入力された郵便番号では選挙区は見つかりませんでした</p>
+
+<% end %>
+</ul>
