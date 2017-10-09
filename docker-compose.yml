@@ -9,11 +9,14 @@ services:
       - 3306:3306
   app:
     build: .
+    environment:
+      - PORT=3000
     command: bundle exec foreman start -f Procfile.dev
     volumes:
       - .:/codeforelection_front
     ports:
       - '3000:3000'
       - '8000:8000'
+      - '80:80'
     depends_on:
       - db
