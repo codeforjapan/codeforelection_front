@@ -1,3 +1,2 @@
-<p><%= params[:zip_code] %></p>
-
-<p><%= @senkyoku.name %></p>
+<!-- <p><%= params[:zip_code] %></p> -->
+<%= render :partial=>'layouts/organisms/list-header', :locals=>{ senkyokuName: @senkyoku.name} %>
