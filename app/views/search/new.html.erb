@@ -15,7 +15,31 @@
 <hr />
 
 <h2>molecules</h2>
-<div class="search-bar">
-    <input type="text" class="typo-2" />
-    <i class="fa fa-search" aria-hidden="true" />
-</div>
+<%= render partial:'layouts/molecules/searchbar', locals: {propName:'prop', placeHolder:'郵便番号', val:''} %>
+<%= render partial:'layouts/molecules/person', locals: {src: '/assets/Person@2x.png'} %>
+
+<h2>organisms</h2>
+<%= render partial:'layouts/organisms/person-item',
+locals: {
+    party: '甘党',
+    name: '山田太郎',
+    age: '30',
+    job: 'ニート',
+    isDuplication: false,
+    image: '/assets/Person@2x.png'
+} %>
+<%= render partial:'layouts/organisms/list-header',
+locals: {
+  zipCode: '106-0032',
+  senkyokuName: '東京都第1選挙区',
+} %>
+
+<h2>Block</h2>
+<%= render partial:'layouts/organisms/person-block',
+locals: {
+    party: '甘党',
+    name: '山田太郎',
+    age: '30',
+    job: 'ニート',
+    image: '/assets/Person@2x.png'
+} %>

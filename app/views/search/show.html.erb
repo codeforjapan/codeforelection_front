@@ -1,3 +1,4 @@
+<%= render :partial=>'layouts/organisms/list-header', :locals=>{ senkyokuName: @senkyoku.name} %>
 <p><%= params[:zip_code] %></p>
 
 <% if @senkyoku.present? %>
