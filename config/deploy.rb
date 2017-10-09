@@ -58,7 +58,6 @@ namespace :deploy do
   desc 'Seeds database'
   task :seed do
     on roles(:app) do
-      invoke 'rvm1:hook'
       within release_path do
         execute :bundle, :exec, :"rails db:seed RAILS_ENV=#{fetch(:stage)}"
       end
