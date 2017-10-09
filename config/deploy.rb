@@ -14,7 +14,7 @@ set :rvm1_ruby_version, '2.4.2'
 #set :rbenv_roles, :all
 
 # Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, 'production'
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, '/var/www/my_app_name'
@@ -46,6 +46,10 @@ set :keep_releases, 3
 set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"
 
 namespace :deploy do
+
+  after :finishing do
+   run "RAILS_ENV=#{rails_env} #{bundle} exec rake seed"
+  end
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
