@@ -1,7 +1,7 @@
 <h1>Code for 選挙</h1>
 
 <%= form_tag("/search", method: "get") do %>
-  <%= render :partial=>'layouts/m/searchbar', :locals=>{ propName:"zip_code",placeHolder:'郵便番号', val:'値'} %>
+  <%= render :partial=>'layouts/molecules/searchbar', :locals=>{ propName:"zip_code",placeHolder:'郵便番号', val:'値'} %>
   <%= submit_tag("Search") %>
 <% end %>
 
@@ -14,24 +14,16 @@
 <hr />
 
 <h2>molecules</h2>
-<%= render partial:'layouts/m/searchbar', locals: {propName:'prop', placeHolder:'郵便番号', val:''} %>
-<div class="person">
-    <img src="/assets/Person@2x.png" />
-</div>
+<%= render partial:'layouts/molecules/searchbar', locals: {propName:'prop', placeHolder:'郵便番号', val:''} %>
+<%= render partial:'layouts/molecules/person', locals: {src: '/assets/Person@2x.png'} %>
 
 <h2>organisms</h2>
-<div class="person-item">
-    <div class="person">
-        <img src="/assets/Person@2x.png" />
-    </div>
-    <div class="typo-text-1">僕は甘党</div>
-    <div class="column">
-        <div class="typo-2 person-name">山田太郎</div>
-        <div class="typo-text-1 person-age">30</div>
-    </div>
-    <div class="column">
-        <div class="typo-text-1 former-job">ニート</div>
-        <div class="typo-text-1 duplication">無</div>
-    </div>
-</div>
-
+<%= render partial:'layouts/organisms/person-item',
+locals: {
+    party: '甘党',
+    name: '山田太郎',
+    age: '30',
+    job: 'ニート',
+    isDuplication: false,
+    image: '/assets/Person@2x.png'
+} %>
