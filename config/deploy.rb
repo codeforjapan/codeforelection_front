@@ -46,11 +46,6 @@ set :keep_releases, 3
 set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"
 
 namespace :deploy do
-
-  after :finishing do
-   run "RAILS_ENV=#{rails_env} #{bundle} exec rake seed"
-  end
-
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
@@ -59,5 +54,17 @@ namespace :deploy do
       # end
     end
   end
+
+  desc 'Seeds database'
+  task :seed do
+    on roles(:app) do
+      invoke 'rvm1:hook'
+      within release_path do
+        execute :bundle, :exec, :"rails db:seed RAILS_ENV=#{fetch(:stage)}"
+      end
+    end
+  end
+  before 'deploy:migrate', 'deploy:create_db'
+  after :finished, 'deploy:seed'
 
 end
