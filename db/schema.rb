@@ -31,10 +31,8 @@ ActiveRecord::Schema.define(version: 20171009070549) do
   end
 
   create_table "parties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "party_short_name", null: false
-    t.string "party_fullname", null: false
-    t.string "party_ID_wikidata"
-    t.string "wikipedia_url"
+    t.string "short_name", null: false
+    t.string "full_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
