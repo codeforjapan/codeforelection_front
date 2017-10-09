@@ -2,7 +2,7 @@
 lock '3.7.2'
 
 set :application, 'codeforelection_front'
-set :repo_url, 'git@github.com:codeforjapan/codeforelection_front.git'
+set :repo_url, 'https://github.com/codeforjapan/codeforelection_front.git'
 
 # rvmの設定
 set :rvm_type, :system
@@ -14,7 +14,7 @@ set :rvm1_ruby_version, '2.4.2'
 #set :rbenv_roles, :all
 
 # Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, `git rev-parse --abbrev-ref production`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, '/var/www/my_app_name'
