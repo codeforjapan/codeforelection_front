@@ -20,37 +20,51 @@ namespace :import_graydb do
     CSV.read(filename).each do |line|
       if(i > 6) # 先頭読み飛ばし
         # テーブルマッピング
-        name_last_buf = line.name_last
-        name_first_buf = line.name_first
-        name_last_furigana_buf = line.name_full_furigana.split(" ")[0] 
-        name_first_furigana_buf = line.name_full_furigana.split(" ")[1]
-        party_id_buf = line.party_id
-        
-        # 選挙区テーブルからIDを取得
-        senkyoku_id_buf = Senkyoku.where(pref_code: line.pref_code, senkyoku_no: line.senkyoku_no)
+        wikidata_id_buf = line[0]
+        name_last_buf = line[2]
+        name_first_buf = line[3]
+        name_last_furigana_buf = line[5].try(:split, " ").try(:[], 0)
+        name_first_furigana_buf = line[5].try(:split, " ").try(:[], 1)
+        party_id_buf = Party.where(short_name: line[6]).first
 
-        gender_buf = line.gender == "男性" ? 1 : 2
-        birth_day_buf = line.birth_day
-        birth_year_buf = line.birth_year
-        twitter_id_buf = line.twitter_id
-        facebook_id_buf = line.facebook_id
-        official_website_url_buf = line.official_website_url
+        # 選挙区テーブルからIDを取得
+        senkyoku_id_buf = Senkyoku.where(pref_code: sprintf("%02d", line[11]), senkyoku_no: line[12]).first
+
+        gender_buf = line[18] == "男性" ? 1 : 2
+        birth_day_buf = line[19]
+        birth_year_buf = line[21]
+        twitter_id_buf = line[23]
+        facebook_id_buf = line[24]
+        official_website_url_buf = line[29]
 
         # テーブルデータ登録
-        Candidate.create(
-          name_last : name_last_buf,
-          name_first : name_firrst_buf,
-          name_last_furigana : name_last_furigana_buf, 
-          name_first_furigana : name_first_furigana_buf,
-          party_id : party_id_buf,
-          senkyoku_id : senkyoku_id_buf,
-          gender : gender_buf,
-          birth_day : birth_day_buf,
-          birth_year : birth_year_buf,
-          twitter_id : twitter_id_buf,
-          facebook_id : facebook_id_buf,
-          official_website_url : official_website_url_buf
-        )
+        candidate = nil
+        begin
+          candidate = Candidate.find_or_initialize_by(wikidata_id: wikidata_id_buf)
+          candidate.update_attributes!(
+            wikidata_id: wikidata_id_buf,
+            name_last: name_last_buf,
+            name_first: name_first_buf,
+            name_last_furigana: name_last_furigana_buf,
+            name_first_furigana: name_first_furigana_buf,
+            party_id: party_id_buf.try(:id),
+            senkyoku_id: senkyoku_id_buf.try(:id),
+            gender: gender_buf,
+            birth_day: birth_day_buf,
+            birth_year: birth_year_buf,
+            twitter_id: twitter_id_buf,
+            facebook_id: facebook_id_buf,
+            official_website_url: official_website_url_buf
+          )
+        rescue Exception => e
+          puts
+          puts e
+          p candidate.errors
+          p sprintf("%02d", line[11])
+          p line[12]
+          p senkyoku_id_buf
+          # exit
+        end
       end
       i=i+1
     end
@@ -58,4 +72,3 @@ namespace :import_graydb do
   end
 
 end
-
