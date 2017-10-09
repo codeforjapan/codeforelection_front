@@ -6,7 +6,7 @@ class CandidatesController < ApplicationController
 
   private
     def set_candidate
-      @candidate = Candidate.find_by(wikidata_id: candidate_params[:id])
+      @candidate = Candidate.find_by!(wikidata_id: candidate_params[:id])
     end
     def candidate_params
       params.permit(:id)
