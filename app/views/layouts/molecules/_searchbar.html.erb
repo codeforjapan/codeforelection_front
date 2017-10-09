@@ -1,9 +1,10 @@
 <div class="search-bar">
-    <input type="text"
-        name="<%= propName %>"
-        class="typo-2"
-        placeholder="<%= placeHolder %>"
-        value="<%= val %>"
-    />
-    <i class="fa fa-search" aria-hidden="true" ></i>
+    <form action="/search", method="get">
+        <input type="text"
+            name="<%= :zip_code %>"
+            class="typo-2"
+            placeholder="郵便番号を入力してください"
+        />
+        <input type="image" value=" " class="fa fa-search"/>
+    </form>
 </div>
