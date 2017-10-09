@@ -2,7 +2,7 @@
 lock '3.7.2'
 
 set :application, 'codeforelection_front'
-set :repo_url, 'git@github.com:codeforjapan/codeforelection_front.git'
+set :repo_url, 'https://github.com/codeforjapan/codeforelection.git'
 
 # rvmの設定
 set :rvm_type, :system
