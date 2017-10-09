@@ -1,2 +1,2 @@
-Procweb: rm -f /codeforelection_front/tmp/pids/server.pid && bundle exec pumactl start
+Procweb: rm -f /codeforelection_front/tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0
 nginx: /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
