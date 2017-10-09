@@ -4,3 +4,8 @@ machine:
   ruby:
     version:
       2.4.2
+deployment:
+  production:
+    branch: production
+    commands:
+      - bundle exec cap production deploy
