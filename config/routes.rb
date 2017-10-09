@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "search#new"
+  get "/index", to: "search#index"
   get "/search", to: "search#show"
   resources :senkyokus, only: [:index, :show]
   resources :candidates, only: [:show]
