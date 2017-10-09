@@ -1,8 +1,7 @@
 <h1>Code for 選挙</h1>
 
 <%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:zip_code, "郵便番号:") %>
-  <%= text_field_tag(:zip_code) %>
+  <%= render :partial=>'layouts/m/searchbar', :locals=>{ propName:"zip_code",placeHolder:'郵便番号', val:'値'} %>
   <%= submit_tag("Search") %>
 <% end %>
 
@@ -35,3 +34,4 @@
         <div class="typo-text-1 duplication">無</div>
     </div>
 </div>
+
