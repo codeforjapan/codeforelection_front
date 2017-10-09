@@ -32,3 +32,13 @@ locals: {
   zipCode: '106-0032',
   senkyokuName: '東京都第1選挙区',
 } %>
+
+<h2>Block</h2>
+<%= render partial:'layouts/organisms/person-block',
+locals: {
+    party: '甘党',
+    name: '山田太郎',
+    age: '30',
+    job: 'ニート',
+    image: '/assets/Person@2x.png'
+} %>
