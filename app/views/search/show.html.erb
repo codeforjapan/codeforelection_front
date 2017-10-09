@@ -14,6 +14,7 @@
   	age: <%= candidate.age %><br />
     full name:<%= candidate.full_name %><br />
     full name(かな)<%= candidate.full_name_furigana %><br />
+    <%= link_to "リンク", candidate_path(id: candidate.wikidata_id) %>
   </li>
 <% end %>
 
