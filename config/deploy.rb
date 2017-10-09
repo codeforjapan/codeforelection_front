@@ -64,7 +64,6 @@ namespace :deploy do
       end
     end
   end
-  before 'deploy:migrate', 'deploy:create_db'
   after :finished, 'deploy:seed'
 
 end
