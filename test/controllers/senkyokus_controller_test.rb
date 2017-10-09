@@ -25,9 +25,5 @@ class SenkyokusControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update senkyoku" do
-    patch senkyoku_url(@senkyoku), params: { senkyoku: { pref_code: @senkyoku.pref_code, senkyoku_no: @senkyoku.senkyoku_no, zip_code: @senkyoku.zip_code } }
-    assert_redirected_to senkyoku_url(@senkyoku)
-  end
 
 end
