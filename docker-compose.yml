@@ -17,5 +17,6 @@ services:
     ports:
       - '3000:3000'
       - '8000:8000'
+      - '80:80'
     depends_on:
       - db

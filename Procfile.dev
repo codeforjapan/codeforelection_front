@@ -1,1 +1,2 @@
 Procweb: rm -f /app/tmp/pids/server.pid && bundle exec pumactl start
+mginx: /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
