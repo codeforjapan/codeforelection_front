@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pref code:</strong>
+  <%= @senkyoku.pref_code %>
+</p>
+
+<p>
+  <strong>Senkyoku no:</strong>
+  <%= @senkyoku.senkyoku_no %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @senkyoku.zip_code %>
+</p>
+
+<%= link_to 'Edit', edit_senkyoku_path(@senkyoku) %> |
+<%= link_to 'Back', senkyokus_path %>

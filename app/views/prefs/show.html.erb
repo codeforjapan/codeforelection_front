@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pref code:</strong>
+  <%= @pref.pref_code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pref.name %>
+</p>
+
+<%= link_to 'Edit', edit_pref_path(@pref) %> |
+<%= link_to 'Back', prefs_path %>
