@@ -21,6 +21,8 @@ namespace :import_graydb do
       if(i > 6) # 先頭読み飛ばし
         # テーブルマッピング
         wikidata_id_buf = line[0]
+        next unless wikidata_id_buf.present?
+
         name_last_buf = line[2]
         name_first_buf = line[3]
         name_last_furigana_buf = line[5].try(:split, " ").try(:[], 0)
@@ -28,14 +30,14 @@ namespace :import_graydb do
         party_id_buf = Party.where(short_name: line[6]).first
 
         # 選挙区テーブルからIDを取得
-        senkyoku_id_buf = Senkyoku.where(pref_code: sprintf("%02d", line[11]), senkyoku_no: line[12]).first
+        senkyoku_id_buf = Senkyoku.where(pref_code: sprintf("%02d", line[13]), senkyoku_no: line[14]).first
 
-        gender_buf = line[18] == "男性" ? 1 : 2
-        birth_day_buf = line[19]
-        birth_year_buf = line[21]
-        twitter_id_buf = line[23]
-        facebook_id_buf = line[24]
-        official_website_url_buf = line[29]
+        gender_buf = line[20] == "男性" ? 1 : 2
+        birth_day_buf = line[21]
+        birth_year_buf = line[23]
+        twitter_id_buf = line[25]
+        facebook_id_buf = line[25]
+        official_website_url_buf = line[31]
 
         # テーブルデータ登録
         candidate = nil
@@ -60,8 +62,8 @@ namespace :import_graydb do
           puts
           puts e
           p candidate.errors
-          p sprintf("%02d", line[11])
-          p line[12]
+          p sprintf("%02d", line[13])
+          p line[14]
           p senkyoku_id_buf
           # exit
         end
