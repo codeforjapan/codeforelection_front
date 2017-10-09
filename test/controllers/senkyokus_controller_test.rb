@@ -15,6 +15,7 @@ class SenkyokusControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  pending
   test "should create senkyoku" do
     assert_difference('Senkyoku.count') do
       post senkyokus_url, params: { senkyoku: { pref_code: @senkyoku.pref_code, senkyoku_no: @senkyoku.senkyoku_no, zip_code: @senkyoku.zip_code } }
