@@ -15,15 +15,6 @@ class SenkyokusControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  pending
-  test "should create senkyoku" do
-    assert_difference('Senkyoku.count') do
-      post senkyokus_url, params: { senkyoku: { pref_code: @senkyoku.pref_code, senkyoku_no: @senkyoku.senkyoku_no, zip_code: @senkyoku.zip_code } }
-    end
-
-    assert_redirected_to senkyoku_url(Senkyoku.last)
-  end
-
   test "should show senkyoku" do
     get senkyoku_url(@senkyoku)
     assert_response :success
@@ -39,11 +30,4 @@ class SenkyokusControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to senkyoku_url(@senkyoku)
   end
 
-  test "should destroy senkyoku" do
-    assert_difference('Senkyoku.count', -1) do
-      delete senkyoku_url(@senkyoku)
-    end
-
-    assert_redirected_to senkyokus_url
-  end
 end
