@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'kaminari'
 
+# http
+gem 'faraday'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'capistrano','~> 3.7.2'
@@ -46,6 +49,10 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-coolline'
+  gem 'pry-byebug'
 end
 
 group :development do
