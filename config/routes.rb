@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root to: "search#new"
   get "/search", to: "search#show"
-  resources :senkyokus
-  resources :prefs
+  resources :senkyokus, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
