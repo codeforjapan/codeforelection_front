@@ -1,9 +1,9 @@
 <p><%= params[:zip_code] %></p>
 
+<% if @senkyoku.present? %>
 <p><%= @senkyoku.name %></p>
 
 <ul>
-<% if @senkyoku.present? %>
 <% @senkyoku.candidates.each do | candidate | %>
   <li>
   	公認政党:<%= candidate.party.try(:short_name) || "無所属" %>
@@ -16,5 +16,10 @@
     full name(かな)<%= candidate.full_name_furigana %><br />
   </li>
 <% end %>
+
+<% else %>
+
+<p>入力された郵便番号では選挙区は見つかりませんでした</p>
+
 <% end %>
 </ul>
