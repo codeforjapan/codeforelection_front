@@ -32,12 +32,12 @@ namespace :import_graydb do
         # 選挙区テーブルからIDを取得
         senkyoku_id_buf = Senkyoku.where(pref_code: sprintf("%02d", line[13]), senkyoku_no: line[14]).first
 
-        gender_buf = line[20] == "男性" ? 1 : 2
-        birth_day_buf = line[21]
-        birth_year_buf = line[23]
-        twitter_id_buf = line[25]
+        gender_buf = line[19] == "男性" ? 1 : 2
+        birth_day_buf = line[20]
+        birth_year_buf = line[22]
+        twitter_id_buf = line[24]
         facebook_id_buf = line[25]
-        official_website_url_buf = line[31]
+        official_website_url_buf = line[30]
 
         # テーブルデータ登録
         candidate = nil
