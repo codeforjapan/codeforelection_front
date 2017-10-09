@@ -14,7 +14,7 @@ set :rvm1_ruby_version, '2.4.2'
 #set :rbenv_roles, :all
 
 # Default branch is :master
-set :branch, `git rev-parse --abbrev-ref production`.chomp
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, '/var/www/my_app_name'
