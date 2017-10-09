@@ -1,4 +1,4 @@
-set :branch, 'release'
+set :branch, 'production'
 
 # server-based syntax
 # ======================
