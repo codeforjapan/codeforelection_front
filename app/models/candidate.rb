@@ -20,4 +20,7 @@ class Candidate < ApplicationRecord
   def full_name_furigana
   	"#{self.name_last} #{self.name_first}"
   end
+  def birth_day_to_jp
+    "#{self.birth_day.strftime("%Y年%m月%d日")}"
+  end
 end
