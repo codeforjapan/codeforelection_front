@@ -6,6 +6,17 @@
         <div class="typo-text-1 person-age"><%= age %>歳</div>
     </div>
     <div class="typo-text-1 former-job"><%= job %></div>
+    <%= render partial:'layouts/molecules/social-icons',
+      locals: {
+        facebookLink: facebookLink,
+        instagramLink: instagramLink,
+        internetLink: internetLink,
+        lineLink: lineLink,
+        twitterLink: twitterLink,
+        wikipediaLink: wikipediaLink,
+        youtubeLink: youtubeLink
+      }
+    %>
   </div>
   <%= render partial:'layouts/molecules/person', locals: {src: image} %>
 </div>
