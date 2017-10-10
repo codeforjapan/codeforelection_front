@@ -4,16 +4,9 @@ class SearchController < ApplicationController
   end
 
   def show
-    zip_code = search_params[:zip_code].gsub(/\D/, "")
-
-    senkyoku = Senkyoku.where("zip_code LIKE (?)", zip_code)
-
-    if senkyoku.count > 0
-      @senkyoku = senkyoku.first
-    else
-      @senkyoku = Senkyoku.where("zip_code LIKE (?)", zip_code[0..2]).first
-    end
-
+    _zip_code = search_params[:zip_code]
+    @senkyoku = ZipCode.where("zip_code LIKE (?)", _zip_code[0..2]).first.senkyokus.first ||
+      ZipCode.where("zip_code LIKE (?)", _zip_code).first.senkyoku.senkyokus.first
   end
 
 

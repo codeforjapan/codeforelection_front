@@ -3,9 +3,7 @@
 one:
   pref_code: MyString
   senkyoku_no: 1
-  zip_code: MyString
 
 two:
   pref_code: MyString
   senkyoku_no: 1
-  zip_code: MyString
