@@ -30,7 +30,8 @@ namespace :import_graydb do
         party_id_buf = Party.where(short_name: line[6]).first
 
         # 選挙区テーブルからIDを取得
-        senkyoku_id_buf = Senkyoku.where(pref_code: sprintf("%02d", line[13]), senkyoku_no: line[14]).first
+        pref_code_buf = line[13].present? ? sprintf("%02d", line[13]) : nil
+        senkyoku_id_buf = Senkyoku.where(pref_code: pref_code_buf, senkyoku_no: line[14]).first
 
         gender_buf = line[19] == "男性" ? 1 : 2
         birth_day_buf = line[20]
@@ -62,9 +63,6 @@ namespace :import_graydb do
           puts
           puts e
           p candidate.errors
-          p sprintf("%02d", line[13])
-          p line[14]
-          p senkyoku_id_buf
           # exit
         end
       end

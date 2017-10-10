@@ -2,8 +2,9 @@ class Senkyoku < ApplicationRecord
 
   belongs_to :pref, foreign_key: "pref_code", primary_key: "pref_code"
   has_many :candidates
+  has_many :senkyoku_zip_codes
+  has_many :zipcodes, through: :senkyoku_zip_codes
 
-  validates :zip_code, presence: true, uniqueness: true
   validates :pref_code, presence: true
   validates :senkyoku_no, presence: true
 

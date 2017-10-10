@@ -20,6 +20,6 @@ class SenkyokusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def senkyoku_params
-      params.require(:senkyoku).permit(:pref_code, :senkyoku_no, :zip_code)
+      params.require(:senkyoku).permit(:pref_code, :senkyoku_no)
     end
 end

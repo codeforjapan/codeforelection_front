@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171009105609) do
+ActiveRecord::Schema.define(version: 20171010004130) do
 
   create_table "candidates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name_first", null: false
@@ -50,9 +50,20 @@ ActiveRecord::Schema.define(version: 20171009105609) do
   create_table "senkyokus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "pref_code", null: false
     t.integer "senkyoku_no", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "senkyokus_zip_codes", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "senkyoku_id", null: false
+    t.bigint "zip_code_id", null: false
+  end
+
+  create_table "zip_codes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "zip_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["zip_code"], name: "index_zip_codes_on_zip_code", unique: true
   end
 
 end
