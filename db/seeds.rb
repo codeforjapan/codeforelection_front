@@ -23,8 +23,14 @@ url = 'https://raw.githubusercontent.com/codeforjapan/codeforelection/master/dat
 file = open(url)
 json = JSON.parse(file.read)
 json.each do |address|
-  p Senkyoku.find_or_create_by(zip_code: address[0], pref_code: address[1]["p"], senkyoku_no: address[1]["s"])
-  print "."
+  begin
+    senkyoku = Senkyoku.find_or_create_by(pref_code: address[1]["p"], senkyoku_no: address[1]["s"])
+    zipcode = ZipCode.find_or_create_by(zip_code: address[0])
+    SenkyokuZipCode.find_or_create_by(zip_code_id: zipcode.id, senkyoku_id: senkyoku.id)
+    print "."
+  rescue Exception => e
+    p e
+  end
 end
 
 # Party
