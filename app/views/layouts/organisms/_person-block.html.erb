@@ -1,9 +1,9 @@
 <div class="person-block">
   <div class="profile">
-    <div class="typo-text-1">僕は甘党</div>
+    <div class="typo-text-1"><%= party %> <%= render partial:'layouts/molecules/area-type', locals: {areaType: '比'} %></div>
     <div class="column">
-        <div class="typo-2 person-name"><%= name %></div>
-        <div class="typo-text-1 person-age"><%= age %></div>
+        <div class="typo-1 person-name"><%= name %></div>
+        <div class="typo-text-1 person-age"><%= age %>歳</div>
     </div>
     <div class="typo-text-1 former-job"><%= job %></div>
   </div>
