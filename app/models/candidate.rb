@@ -7,9 +7,9 @@ class Candidate < ApplicationRecord
   validates :name_last, presence: true
   validates :wikidata_id, presence: true, uniqueness: true
 
-  def age
+  def age(unit = "")
     if self.birth_day.present?
-      sprintf("%d",((Time.now.to_i - self.birth_day.to_time.to_i) / 60 / 60 / 24) / 365)
+      sprintf("%d",((Time.now.to_i - self.birth_day.to_time.to_i) / 60 / 60 / 24) / 365) + unit
     else
       "未登録"
     end
