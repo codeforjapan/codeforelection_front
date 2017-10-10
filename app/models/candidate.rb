@@ -23,4 +23,13 @@ class Candidate < ApplicationRecord
   def birth_day_to_jp
     "#{self.birth_day.strftime("%Y年%m月%d日")}"
   end
+  def gender_label
+    self.gender == 1 ? "男性" : "女性"
+  end
+  def twitter_link
+    "https://twitter.com/#{self.twitter_id}"
+  end
+  def facebook_link
+    self.facebook_id
+  end
 end
