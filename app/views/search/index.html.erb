@@ -18,6 +18,7 @@
 <%= render partial:'layouts/molecules/searchbar', locals: {propName:'prop', placeHolder:'郵便番号', val:''} %>
 <%= render partial:'layouts/molecules/person', locals: {src: '/assets/Person@2x.png'} %>
 <%= render partial:'layouts/molecules/area-type', locals: {areaType: '比'} %>
+<%= render partial:'layouts/molecules/detail-button', locals: {detailUrl: '/'} %>
 
 <h2>organisms</h2>
 <%= render partial:'layouts/organisms/person-item',
@@ -27,7 +28,8 @@ locals: {
     age: '30',
     job: 'ニート',
     isDuplication: false,
-    image: '/assets/Person@2x.png'
+    image: '/assets/Person@2x.png',
+    detailUrl: '/'
 } %>
 <%= render partial:'layouts/organisms/list-header',
 locals: {

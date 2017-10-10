@@ -1,27 +1,77 @@
 <%= render :partial=>'layouts/organisms/list-header', :locals=>{ senkyokuName: @senkyoku.name} %>
-<p><%= params[:zip_code] %></p>
 
 <% if @senkyoku.present? %>
-<p><%= @senkyoku.name %></p>
-
-<ul>
-<% @senkyoku.candidates.each do | candidate | %>
-  <li>
-  	公認政党:<%= candidate.party.try(:short_name) || "無所属" %>
-  	first name:<%= candidate.name_first %><br />
-  	last name: <%= candidate.name_last %><br />
-  	first name(かな):<%= candidate.name_first_furigana %><br />
-  	last name(かな): <%= candidate.name_last_furigana %><br />
-  	age: <%= candidate.age %><br />
-    full name:<%= candidate.full_name %><br />
-    full name(かな)<%= candidate.full_name_furigana %><br />
-    <%= link_to "リンク", candidate_path(id: candidate.wikidata_id) %>
-  </li>
-<% end %>
-
+  <div class="candidate-wrapper">
+    <!-- Real candidate data -->
+    <% @senkyoku.candidates.each do | candidate | %>
+      <%= render 'layouts/organisms/person-item',
+        party: candidate.party.try(:short_name) || "無所属",
+        name: candidate.full_name,
+        age: candidate.age + "歳",
+        job: '前職',
+        areaType: '比',
+        isDuplication: false,
+        image: '/assets/Person@2x.png',
+        detailUrl: candidate_path(id: candidate.wikidata_id)
+      %>
+    <% end %>
+    <!-- Dummy candidate data -->
+    <%= render partial:'layouts/organisms/person-item',
+    locals: {
+        party: '甘党',
+        name: '山田太郎',
+        age: '30',
+        job: 'ニート',
+        areaType: '比',
+        isDuplication: false,
+        image: '/assets/Person@2x.png',
+        detailUrl: '/'
+    } %>
+    <%= render partial:'layouts/organisms/person-item',
+    locals: {
+        party: '甘党',
+        name: '山田太郎',
+        age: '30',
+        job: 'ニート',
+        areaType: '比',
+        isDuplication: false,
+        image: '/assets/Person@2x.png',
+        detailUrl: '/'
+    } %>
+    <%= render partial:'layouts/organisms/person-item',
+    locals: {
+        party: '甘党',
+        name: '山田太郎',
+        age: '30',
+        job: 'ニート',
+        areaType: '比',
+        isDuplication: false,
+        image: '/assets/Person@2x.png',
+        detailUrl: '/'
+    } %>
+    <%= render partial:'layouts/organisms/person-item',
+    locals: {
+        party: '甘党',
+        name: '山田太郎',
+        age: '30',
+        job: 'ニート',
+        areaType: '比',
+        isDuplication: false,
+        image: '/assets/Person@2x.png',
+        detailUrl: '/'
+    } %>
+    <%= render partial:'layouts/organisms/person-item',
+    locals: {
+        party: '甘党',
+        name: '山田太郎',
+        age: '30',
+        job: 'ニート',
+        areaType: '比',
+        isDuplication: false,
+        image: '/assets/Person@2x.png',
+        detailUrl: '/'
+    } %>
+  </div>
 <% else %>
-
-<p>入力された郵便番号では選挙区は見つかりませんでした</p>
-
+  <p>入力された郵便番号では選挙区は見つかりませんでした</p>
 <% end %>
-</ul>
