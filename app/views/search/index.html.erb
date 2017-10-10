@@ -19,6 +19,17 @@
 <%= render partial:'layouts/molecules/person', locals: {src: '/assets/Person@2x.png'} %>
 <%= render partial:'layouts/molecules/area-type', locals: {areaType: '比'} %>
 <%= render partial:'layouts/molecules/detail-button', locals: {detailUrl: '/'} %>
+<%= render partial:'layouts/molecules/social-icons',
+  locals: {
+    facebookLink: '/',
+    instagramLink: '/',
+    internetLink: '/',
+    lineLink: '/',
+    twitterLink: '/',
+    wikipediaLink: '/',
+    youtubeLink: '/'
+  }
+%>
 
 <h2>organisms</h2>
 <%= render partial:'layouts/organisms/person-item',
