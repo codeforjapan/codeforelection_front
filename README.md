@@ -20,7 +20,7 @@ docker-compose up
 候補者データのインポートは、docker-compose upでサーバを立ち上げた状態で、下記のコマンドを実行することで可能です。
 
 ```bash
-docker-compose exec app bundle exec rake import_graydb:import
+docker-compose exec app bundle exec rake graydb:import
 ```
 
 その後、ブラウザから http://localhost:3000 にアクセスして下さい。
