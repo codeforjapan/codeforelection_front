@@ -11,7 +11,7 @@
     </div>
     <div class="column">
         <div class="typo-text-1 former-job"><%= job %></div>
-        <div class="typo-text-1 duplication"><%=isDuplication ? '有': ''%></div>
+        <div class="typo-text-1 duplication"><%= isDuplication ? '有': ''%></div>
     </div>
     <%= render partial:'layouts/molecules/detail-button', locals: {detailUrl: detailUrl} %>
 </div>
