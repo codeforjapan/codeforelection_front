@@ -7,29 +7,14 @@ locals: {
     image: '/assets/Person@2x.png',
     areaType: '比',
     facebookLink: @candidate.facebook_link,
-    instagramLink: '',
-    internetLink: '',
-    lineLink: '',
-    twitterLink: @candidate.twitter_link,
-    wikipediaLink: '',
-    youtubeLink: ''
+    internetLink: @candidate.official_website_link,
+    twitterLink: @candidate.twitter_link
 } %>
 <%= render partial:'layouts/organisms/detail-block',
 locals: {
     name: @candidate.full_name,
     party: @candidate.party.try(:full_name),
-    recommendationParty: '推薦政党が入ります',
-    previousParty: '以前の政党が入ります',
     job: '前職',
-    candidacyHistory: '過去の立候補歴',
     sex: @candidate.gender_label,
-    birthDay: @candidate.birth_day_to_jp,
-    birthPlace: '出生地',
-    latestEducationalBackground: '最新の学歴が入ります',
-    educationalBackground: '学歴の履歴が入ります',
-    career: '職歴',
-    publicOffice: '公職',
-    father: '父親',
-    mate: '配偶者'
+    birthDay: @candidate.birth_day_to_jp
 } %>
-
