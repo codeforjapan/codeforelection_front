@@ -63,6 +63,7 @@ namespace :deploy do
       end
     end
   end
+  after :publishing, :restart
   after :finished, 'deploy:seed'
 
 end
