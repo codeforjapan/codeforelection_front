@@ -27,9 +27,12 @@ class Candidate < ApplicationRecord
     self.gender == 1 ? "男性" : "女性"
   end
   def twitter_link
-    "https://twitter.com/#{self.twitter_id}"
+    "https://twitter.com/#{self.twitter_id}" if self.twitter_id
   end
   def facebook_link
     self.facebook_id
+  end
+  def official_website_link
+    self.official_website_url
   end
 end
