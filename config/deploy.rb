@@ -63,6 +63,15 @@ namespace :deploy do
       end
     end
   end
+
+  desc 'graydb impport'
+  task :graydb_import do
+    on roles(:app) do
+      within release_path do
+        execute :bundle, :exec, :"rake graydb:import RAILS_ENV=#{fetch(:stage)}"
+      end
+    end
+  end
   after :publishing, :restart
   after :finished, 'deploy:seed'
 

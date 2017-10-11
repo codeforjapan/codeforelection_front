@@ -4,7 +4,7 @@ locals: {
     name: @candidate.full_name,
     age: @candidate.age("歳"),
     job: '前職',
-    image: '/assets/Person@2x.png',
+    image: asset_path('Person@2x.png'),
     areaType: '比',
     facebookLink: @candidate.facebook_link,
     internetLink: @candidate.official_website_link,
