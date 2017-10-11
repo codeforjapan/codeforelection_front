@@ -16,7 +16,7 @@
 
 <h2>molecules</h2>
 <%= render partial:'layouts/molecules/searchbar', locals: {propName:'prop', placeHolder:'郵便番号', val:''} %>
-<%= render partial:'layouts/molecules/person', locals: {src: '/assets/Person@2x.png'} %>
+<%= render partial:'layouts/molecules/person', locals: {src: asset_path('Person@2x.png') } %>
 <%= render partial:'layouts/molecules/area-type', locals: {areaType: '比'} %>
 <%= render partial:'layouts/molecules/detail-button', locals: {detailUrl: '/'} %>
 <%= render partial:'layouts/molecules/social-icons',
@@ -39,7 +39,7 @@ locals: {
     age: '30',
     job: 'ニート',
     isDuplication: false,
-    image: '/assets/Person@2x.png',
+    image: asset_path('Person@2x.png'),
     detailUrl: '/',
     areaType: '比'
 } %>
@@ -56,7 +56,7 @@ locals: {
     name: '山田太郎',
     age: '30',
     job: 'ニート',
-    image: '/assets/Person@2x.png',
+    image: asset_path('Person@2x.png'),
     areaType: '比',
     facebookLink: '/',
     instagramLink: '/',
