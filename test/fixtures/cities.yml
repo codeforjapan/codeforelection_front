@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pref_code: MyString
+  city_code: MyString
+  city_name: MyString
+
+two:
+  pref_code: MyString
+  city_code: MyString
+  city_name: MyString

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171011020857) do
+ActiveRecord::Schema.define(version: 20171012045609) do
 
   create_table "candidates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name_first", null: false
@@ -32,9 +32,30 @@ ActiveRecord::Schema.define(version: 20171011020857) do
     t.boolean "is_candidate"
     t.integer "current_position"
     t.integer "submission_order"
-    t.boolean "is_hirei"
     t.string "winning_history"
+    t.integer "hirei_area_id"
     t.index ["wikidata_id"], name: "index_candidates_on_wikidata_id", unique: true
+  end
+
+  create_table "cities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "city_code", null: false
+    t.string "pref_code", null: false
+    t.string "city_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_code"], name: "index_cities_on_city_code", unique: true
+  end
+
+  create_table "hirei_senkyokus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.integer "capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hirei_senkyokus_prefs", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "pref_id", null: false
+    t.bigint "hirei_senkyoku_id", null: false
   end
 
   create_table "parties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -68,6 +89,7 @@ ActiveRecord::Schema.define(version: 20171011020857) do
     t.string "zip_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "city_id"
     t.index ["zip_code"], name: "index_zip_codes_on_zip_code", unique: true
   end
 
