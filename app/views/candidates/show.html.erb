@@ -3,9 +3,9 @@ locals: {
     party: @candidate.party.try(:full_name),
     name: @candidate.full_name,
     age: @candidate.age("歳"),
-    job: '前職',
+    job: @candidate.current_position_label,
     image: asset_path('Person@2x.png'),
-    areaType: '比',
+    isHirei: @candidate.is_hirei_label,
     facebookLink: @candidate.facebook_link,
     internetLink: @candidate.official_website_link,
     twitterLink: @candidate.twitter_link
@@ -14,7 +14,7 @@ locals: {
 locals: {
     name: @candidate.full_name,
     party: @candidate.party.try(:full_name),
-    job: '前職',
+    job: @candidate.current_position_label,
     sex: @candidate.gender_label,
     birthDay: @candidate.birth_day_to_jp
 } %>
