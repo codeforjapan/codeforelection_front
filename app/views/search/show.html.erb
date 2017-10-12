@@ -7,6 +7,7 @@
       <%= render 'layouts/organisms/person-item',
         party: candidate.party.try(:short_name) || "無所属",
         name: candidate.full_name,
+        furigana: candidate.full_name_furigana,
         age: candidate.age("歳"),
         job: candidate.current_position_label,
         areaType: nil,
