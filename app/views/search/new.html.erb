@@ -5,6 +5,18 @@
   このサイトでは、郵便番号からあなたの住む地域の選挙区と立候補者を検索し、その候補者の情報を表示することができます。
   全ての候補者の情報は、中立的な立場で収集した事実情報に基いています。
 </div>
+
+<h1>検索</h1>
 <div>
 <%= render partial:'layouts/molecules/searchbar'%>
+</div>
+
+<h1>都道府県別</h1>
+<div class="prefs">
+  <% Pref.all.order(:id).each do |pref| %>
+    <%= render 'layouts/senkyokus/senkyoku-block',
+      label_name: pref.name,
+      link_url: "/senkyoku/#{pref.pref_code}"
+    %>
+  <% end %>
 </div>
