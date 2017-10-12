@@ -1,0 +1,10 @@
+<%= render :partial=>'layouts/organisms/list-header', :locals=>{ senkyokuName: "#{@keyword}の検索結果" } %>
+
+<% if @candidates.empty? %>
+  <p>入力された名前では候補者は見つかりませんでした</p>
+<% else %>
+  <div class="candidate-wrapper">
+    <!-- Real candidate data -->
+    <%= render partial: 'candidate', collection: @candidates %>
+  </div>
+<% end %>
