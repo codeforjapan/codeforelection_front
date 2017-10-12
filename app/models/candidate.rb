@@ -34,8 +34,8 @@ class Candidate < ApplicationRecord
         '-'
     end
   end
-  def is_hirei_label
-    hirei_area_id.blank? ? '' : '比'
+  def is_hirei
+    hirei_area_id.blank? ? false : true
   end
   def twitter_link
     "https://twitter.com/#{self.twitter_id}" if self.twitter_id and self.twitter_id != '-'
