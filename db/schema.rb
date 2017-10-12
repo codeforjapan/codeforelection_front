@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171012045609) do
+ActiveRecord::Schema.define(version: 20171012145021) do
 
   create_table "candidates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name_first", null: false
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20171012045609) do
     t.integer "senkyoku_no", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["pref_code", "senkyoku_no"], name: "index_senkyokus_on_pref_code_and_senkyoku_no", unique: true
   end
 
   create_table "senkyokus_zip_codes", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -87,8 +88,6 @@ ActiveRecord::Schema.define(version: 20171012045609) do
 
   create_table "zip_codes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "zip_code", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "city_id"
     t.index ["zip_code"], name: "index_zip_codes_on_zip_code", unique: true
   end
