@@ -22,3 +22,5 @@
 /node_modules
 .idea
 dist
+
+.ssh/id_rsa
