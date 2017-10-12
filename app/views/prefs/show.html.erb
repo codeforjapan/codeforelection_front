@@ -1,14 +1,12 @@
-<p id="notice"><%= notice %></p>
+<%= render :partial=>'layouts/organisms/list-header', :locals=>{ senkyokuName: @pref.name} %>
 
-<p>
-  <strong>Pref code:</strong>
-  <%= @pref.pref_code %>
-</p>
+<h1>小選挙区</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @pref.name %>
-</p>
-
-<%= link_to 'Edit', edit_pref_path(@pref) %> |
-<%= link_to 'Back', prefs_path %>
+<div class="senkyokus">
+  <% @pref.senkyokus.order('senkyoku_no ASC').each do |senkyoku| %>
+    <%= render 'layouts/senkyokus/senkyoku-block',
+      label_name: "#{senkyoku.senkyoku_no}区",
+      link_url: "/senkyoku/#{@pref.pref_code}/#{senkyoku.senkyoku_no}"
+    %>
+  <% end %>
+</div>
