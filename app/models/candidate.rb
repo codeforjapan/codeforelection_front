@@ -16,7 +16,7 @@ class Candidate < ApplicationRecord
   	"#{self.name_last} #{self.name_first}"
   end
   def full_name_furigana
-  	"#{self.name_last} #{self.name_first}"
+  	"#{self.name_last_furigana} #{self.name_first_furigana}"
   end
   def birth_day_to_jp
     self.birth_day.try(:strftime, "%Y年%m月%d日") || '-'
