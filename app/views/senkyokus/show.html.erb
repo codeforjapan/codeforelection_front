@@ -10,7 +10,7 @@
         furigana: candidate.full_name_furigana,
         age: candidate.age("歳"),
         job: candidate.current_position_label,
-        areaType: nil,
+        isSyosenkyoku: candidate.is_syosenkyoku,
         isHirei: candidate.is_hirei,
         image: asset_path('Person@2x.png'),
         detailUrl: candidate_path(id: candidate.wikidata_id)
