@@ -26,6 +26,8 @@ class SearchController < ApplicationController
       ' AND (name_first LIKE ? OR name_first_furigana LIKE ?)',
       last_like, last_like, first_like, first_like
     ).order('submission_order ASC').limit(100).to_a
+
+    @title = "#{@keyword}の検索結果一覧"
   end
 
   private
