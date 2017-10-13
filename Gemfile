@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'kaminari'
 
+gem 'activerecord-import'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'capistrano','~> 3.7.2'
@@ -40,6 +42,8 @@ gem 'capistrano-rails','~> 1.1.6', require: false
 gem 'capistrano-bundler','~> 1.1.4', require: false
 gem 'rvm1-capistrano3','~> 1.4.0', require: false
 gem 'unicorn'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
