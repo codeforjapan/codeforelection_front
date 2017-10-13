@@ -37,6 +37,9 @@ class Candidate < ApplicationRecord
   def is_hirei
     hirei_area_id.blank? ? false : true
   end
+  def is_syosenkyoku
+    senkyoku_id.blank? ? false : true
+  end
   def twitter_link
     "https://twitter.com/#{self.twitter_id}" if self.twitter_id and self.twitter_id != '-'
   end
