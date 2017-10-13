@@ -3,7 +3,7 @@ class SenkyokusController < ApplicationController
   # GET /senkyokus/1
   # GET /senkyokus/1.json
   def show
-    @senkyoku = Senkyoku.where(pref_code: senkyoku_params[:pref_code], senkyoku_no: senkyoku_params[:senkyoku_no]).first
+    @senkyoku = Senkyoku.find_by!(pref_code: senkyoku_params[:pref_code], senkyoku_no: senkyoku_params[:senkyoku_no])
     @title = @senkyoku.name
   end
 

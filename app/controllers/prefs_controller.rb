@@ -1,7 +1,7 @@
 class PrefsController < ApplicationController
 
   def show
-    @pref = Pref.where(pref_code: pref_params[:pref_code]).first
+    @pref = Pref.find_by!(pref_code: pref_params[:pref_code])
     @title = "#{@pref.name}の選挙区"
   end
 
