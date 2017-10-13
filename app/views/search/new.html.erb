@@ -1,11 +1,7 @@
-<div id="top">
+<section id="top">
   <div class="container">
     <div class="titile">
       <h1 class="typo-1">2017年衆議院選挙候補者ナビ</h1>
-    </div>
-    <div class="typo-2">
-      このサイトでは、郵便番号からあなたの住む地域の選挙区と立候補者を検索し、その候補者の情報を表示することができます。
-      全ての候補者の情報は、中立的な立場で収集した事実情報に基いています。
     </div>
     <div class="search-wrapper">
       <h1>郵便番号で検索</h1>
@@ -13,10 +9,14 @@
       <h1>候補者名で検索</h1>
       <%= render partial:'layouts/molecules/searchbar_by_name'%>
     </div>
+    <div class="typo-2">
+      このサイトでは、郵便番号からあなたの住む地域の選挙区と立候補者を検索し、その候補者の情報を表示することができます。
+      全ての候補者の情報は、中立的な立場で収集した事実情報に基いています。
+    </div>
   </div>
-</div>
+</section>
 
-<div id="area-block">
+<section id="area-block">
   <div class="container">
     <h1>都道府県別</h1>
     <div class="prefs">
@@ -28,4 +28,4 @@
       <% end %>
     </div>
   </div>
-</div>
+</section>
