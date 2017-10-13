@@ -18,7 +18,7 @@ namespace :graydb do
 
     csv = CSV.read(filename)
     p header = csv.drop(3).first
-    csv.drop(6).each do |line|
+    csv.drop(7).each do |line|
 
       wikidata_id_buf = line[header.index('UI用DBカラム名')] # wikidata_id
       next unless wikidata_id_buf.present?
