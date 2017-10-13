@@ -1,6 +1,8 @@
 <div class="person-block">
   <div class="profile">
-    <div class="typo-text-1"><%= party %> <%= render partial:'layouts/molecules/area-type', locals: { isHirei: isHirei } %></div>
+    <div class="typo-text-1">
+      <%= party %> <%= render partial:'layouts/molecules/area-type', locals: { isHirei: isHirei, isSyosenkyoku: isSyosenkyoku } %>
+    </div>
     <div class="column">
         <div class="typo-1 person-name"><%= name %></div>
         <div class="typo-text-1 person-age"><%= age %></div>

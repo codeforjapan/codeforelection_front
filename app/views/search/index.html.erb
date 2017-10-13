@@ -17,7 +17,7 @@
 <h2>molecules</h2>
 <%= render partial:'layouts/molecules/searchbar', locals: {propName:'prop', placeHolder:'郵便番号', val:''} %>
 <%= render partial:'layouts/molecules/person', locals: {src: asset_path('Person@2x.png') } %>
-<%= render partial:'layouts/molecules/area-type', locals: {isHirei: false} %>
+<%= render partial:'layouts/molecules/area-type', locals: {isHirei: false, isSyosenkyoku: true} %>
 <%= render partial:'layouts/molecules/detail-button', locals: {detailUrl: '/'} %>
 <%= render partial:'layouts/molecules/social-icons',
   locals: {
