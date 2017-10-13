@@ -166,6 +166,10 @@ Party.find_or_create_by(short_name: "立民", full_name: "立憲民主党")
 Party.find_or_create_by(short_name: "維新", full_name: "日本維新の会")
 Party.find_or_create_by(short_name: "自民", full_name: "自由民主党")
 Party.find_or_create_by(short_name: "自由", full_name: "自由党")
+Party.find_or_create_by(short_name: "無所属", full_name: "無所属")
+Party.find_or_create_by(short_name: "諸派", full_name: "諸派")
+Party.find_or_create_by(short_name: "支持政党なし", full_name: "支持政党なし")
+Party.find_or_create_by(short_name: "新党大地", full_name: "新党大地")
 
 # HireiSenkyokus
 hireis = [['比例北海道ブロック', 8, ['01']],
