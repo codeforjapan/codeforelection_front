@@ -2,7 +2,6 @@
 
 <% if @senkyoku.present? %>
   <div class="candidate-wrapper">
-    <!-- Real candidate data -->
     <%= render partial: 'candidate', collection: @senkyoku.candidates.order('submission_order ASC') %>
   </div>
 <% else %>

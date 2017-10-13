@@ -6,11 +6,10 @@
     </div>
 
     <div class="column">
-        <div class="typo-2 person-name"><%= name %></div>
+        <div class="typo-1 person-name"><%= name %></div>
     </div>
-    <div class="column">
-      <div class="typo-text-1 person-age"><%= age %></div>
-      <div class="typo-text-1 former-job"><%= job %></div>
-    </div>
+    <div class="typo-3 person-furigana"><%= furigana %></div>
+    <div class="typo-text-1 person-age"><%= age %></div>
+    <div class="typo-text-1 former-job"><%= job %></div>
     <%= render partial:'layouts/molecules/detail-button', locals: {detailUrl: detailUrl} %>
 </div>
