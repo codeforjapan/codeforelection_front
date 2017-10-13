@@ -10,7 +10,7 @@
         age: candidate.age("歳"),
         job: candidate.current_position_label,
         areaType: nil,
-        isHirei: candidate.is_hirei_label,
+        isHirei: candidate.is_hirei,
         image: asset_path('Person@2x.png'),
         detailUrl: candidate_path(id: candidate.wikidata_id)
       %>
