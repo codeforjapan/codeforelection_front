@@ -36,7 +36,7 @@ class Candidate < ApplicationRecord
       when 1
         '現職'
       when 2
-        '新顔'
+        '新人'
       when 3
         '元職'
       else
