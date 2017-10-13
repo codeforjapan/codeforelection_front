@@ -30,13 +30,27 @@ namespace :graydb do
       # 選挙区テーブルからIDを取得
       pref_code_buf = line[header.index('pref_code')].present? ? sprintf("%02d", line[header.index('pref_code')]) : nil
       senkyoku_id_buf = Senkyoku.where(pref_code: pref_code_buf, senkyoku_no: line[header.index('senkyoku_no')]).first
-      gender_buf = line[header.index('gender')] == "男性" ? 1 : 2
+      gender_buf =
+
+      case line[header.index('gender')]
+      when "男性"
+        gender_buf = 1
+      when "女性"
+        gender_buf = 2
+      else
+      end
+
+
       is_candidate_buf = line[header.index('is_candidate')] == '確定' ? true : false
+
+
       case line[header.index('current_position')]
-        when '現職'
+        when '現'
           current_position_buf = 1
         when '新'
           current_position_buf = 2
+        when '元'
+          current_position_buf = 3
         else
       end
 

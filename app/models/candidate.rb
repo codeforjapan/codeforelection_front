@@ -22,14 +22,23 @@ class Candidate < ApplicationRecord
     self.birth_day.try(:strftime, "%Y年%m月%d日") || '-'
   end
   def gender_label
-    self.gender == 1 ? "男性" : "女性"
+    case self.gender
+    when 1
+      "男性"
+    when 2
+      "女性"
+    else
+      "-"
+    end
   end
   def current_position_label
     case current_position
       when 1
         '現職'
       when 2
-        '新人'
+        '新顔'
+      when 3
+        '元職'
       else
         '-'
     end
