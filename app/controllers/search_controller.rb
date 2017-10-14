@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
 
   def new
-    @title = "トップページ"
+    @title = APP_SUB_TITLE
   end
 
   def index
