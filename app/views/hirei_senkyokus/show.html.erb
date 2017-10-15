@@ -4,7 +4,7 @@
   <div class="candidate-wrapper">
 
     <% @candidates.each do |party| %>
-      <h2 class="hirei_senkyoku_party"><%= Party.find_by(id: party[0]).full_name %></h2>
+      <h2 class="hirei_senkyoku_party"><%= party[1].first.party.full_name %></h2>
       <%= render partial: 'search/candidate', collection: party[1] %>
     <% end %>
 
