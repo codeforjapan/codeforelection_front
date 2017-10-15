@@ -18,6 +18,8 @@
 
 <section id="area-block">
   <div class="container">
+
+
     <h1>小選挙区</h1>
     <div class="prefs">
       <% Pref.all.order(:id).each do |pref| %>
@@ -27,5 +29,18 @@
         %>
       <% end %>
     </div>
+
+
+    <h1>比例代表</h1>
+    <div class="prefs">
+      <% HireiSenkyoku.all.order(:id).each do |hirei| %>
+        <%= render 'layouts/hirei-senkyokus/hirei-senkyoku-block',
+          label_name: hirei.name,
+          link_url: hirei_senkyoku_path(hirei.name)
+        %>
+      <% end %>
+    </div>
+
+
   </div>
 </section>

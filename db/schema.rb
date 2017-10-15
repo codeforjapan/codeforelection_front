@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171013020404) do
+ActiveRecord::Schema.define(version: 20171014143033) do
 
   create_table "candidates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "name_first", null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20171013020404) do
     t.integer "submission_order"
     t.string "winning_history"
     t.integer "hirei_area_id"
+    t.integer "hirei_meibo_order_no"
     t.index ["wikidata_id"], name: "index_candidates_on_wikidata_id", unique: true
   end
 
