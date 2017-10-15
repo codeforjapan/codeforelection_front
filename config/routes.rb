@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/senkyoku/:pref_code/:senkyoku_no', to: 'senkyokus#show'
 
   resources :candidates, only: [:show]
+  resources :hirei_senkyokus, only: [:show], param: :name
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # components index page

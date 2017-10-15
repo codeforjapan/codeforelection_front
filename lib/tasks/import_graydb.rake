@@ -84,6 +84,7 @@ namespace :graydb do
           current_position: current_position_buf,
           submission_order: line[header.index('submission_order')],
           hirei_area_id: hirei_area_id_buf,
+          hirei_meibo_order_no: line[header.index('hirei_meibo_order_no')],
           winning_history: line[header.index('winning_history')]
         )
       rescue Exception => e

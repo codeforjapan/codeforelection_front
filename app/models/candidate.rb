@@ -2,6 +2,7 @@ class Candidate < ApplicationRecord
 
   belongs_to :senkyoku, optional: true
   belongs_to :party, optional: true
+  belongs_to :hirei_senkyoku, optional: true, foreign_key: 'hirei_area_id', class_name: 'HireiSenkyoku'
 
   validates :name_first, presence: true
   validates :name_last, presence: true
