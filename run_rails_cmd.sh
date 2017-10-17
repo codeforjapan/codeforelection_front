@@ -9,5 +9,6 @@ RUBY_VERSION='ruby-2.4.2'
 
 dir=$(cd $(dirname $0) && pwd)
 
+cd $dir
 echo $(date):$dir/../../rvm1scripts/rvm-auto.sh 2.4.2 bundle exec $@ RAILS_ENV=production
 $dir/../../rvm1scripts/rvm-auto.sh 2.4.2 bundle exec $@ RAILS_ENV=production
