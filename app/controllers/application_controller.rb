@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
   def render_404(exception = nil)
-    render template: "errors/404", status: 404
+    render template: "errors/404", status: 404, formats: [:html]
   end
 end

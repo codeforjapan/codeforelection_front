@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  match 'about', to: 'static#about', via: 'get'
+
+  match 'data', to: 'static#data', via: 'get'
+
   root to: "search#new"
   get "/search", to: "search#show"
   get "/search_by_name", to: "search#by_name"
