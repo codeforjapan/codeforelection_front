@@ -12,7 +12,8 @@ dockerのインストールすると簡単にセットアップすることが�
 
 ```bash
 docker-compose build
-docker-compose run app bundle exec rails db:setup
+docker-compose up -d db
+docker-compose run --rm app bundle exec rails db:setup
 docker-compose up
 ```
 

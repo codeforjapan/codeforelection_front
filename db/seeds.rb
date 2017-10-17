@@ -191,15 +191,59 @@ hireis.each do |hirei|
   prefs.each do |pref|
     pref = Pref.where(pref_code: pref).first
 
+  json.each do |address|
     begin
       HireiSenkyokuPref.find_or_create_by(pref_id: pref.id, 'hirei_senkyoku_id': hirei_senkyoku.id)
       print '.'
     rescue Exception => e
       p e
     end
+  end
 
-  end # End of prefs loop.
+  # Party
+  Party.find_or_create_by(short_name: "こころ", full_name: "日本のこころ")
+  Party.find_or_create_by(short_name: "公明", full_name: "公明党")
+  Party.find_or_create_by(short_name: "共産", full_name: "日本共産党")
+  Party.find_or_create_by(short_name: "労働", full_name: "労働者党")
+  Party.find_or_create_by(short_name: "希望", full_name: "希望の党")
+  Party.find_or_create_by(short_name: "幸福", full_name: "幸福実現党")
+  Party.find_or_create_by(short_name: "新社", full_name: "新社会党")
+  Party.find_or_create_by(short_name: "民進", full_name: "民進党")
+  Party.find_or_create_by(short_name: "社民", full_name: "社会民主党")
+  Party.find_or_create_by(short_name: "立民", full_name: "立憲民主党")
+  Party.find_or_create_by(short_name: "維新", full_name: "日本維新の会")
+  Party.find_or_create_by(short_name: "自民", full_name: "自由民主党")
+  Party.find_or_create_by(short_name: "自由", full_name: "自由党")
 
+  # HireiSenkyokus
+  hireis = [['比例北海道ブロック', 8, ['01']],
+  ['比例東北ブロック',	13, ['02', '03', '04', '05', '06', '07']],
+  ['比例北関東ブロック',	19, ['08', '09', '10', '11']],
+  ['比例南関東ブロック',	22, ['12', '14', '19']],
+  ['比例東京ブロック',	17, ['13']],
+  ['比例北陸信越ブロック',	11, ['15', '16', '17', '18', '20']],
+  ['比例東海ブロック',	21, ['21', '22', '23', '24']],
+  ['比例近畿ブロック',	28, ['25', '26', '27', '28', '29', '30']],
+  ['比例中国ブロック',	11, ['31', '32', '33', '34', '35']],
+  ['比例四国ブロック',	6, ['36', '37', '38', '39']],
+  ['比例九州ブロック',	20, ['40', '41', '42', '43', '44', '45', '46', '47']]]
+  hireis.each do |hirei|
+
+    hirei_senkyoku = HireiSenkyoku.find_or_create_by(name: hirei[0], capacity: hirei[1])
+
+    prefs = hirei[2]
+    prefs.each do |pref|
+      pref = Pref.where(pref_code: pref).first
+
+      begin
+        HireiSenkyokuPref.find_or_create_by(pref_id: pref.id, 'hirei_senkyoku_id': hirei_senkyoku.id)
+      rescue Exception => e
+        p e
+      end
+
+    end # End of prefs loop.
+
+  end
 end
 
 puts "\nfinished!"
