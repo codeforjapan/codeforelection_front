@@ -2,20 +2,7 @@
 
 <% if @senkyoku.present? %>
   <div class="candidate-wrapper">
-    <!-- Real candidate data -->
-    <% @senkyoku.candidates.order('submission_order ASC').each do | candidate | %>
-      <%= render 'layouts/organisms/person-item',
-        party: candidate.party.try(:short_name) || "無所属",
-        name: candidate.full_name,
-        age: candidate.age("歳"),
-        job: candidate.current_position_label,
-        areaType: nil,
-        isHirei: candidate.is_hirei_label,
-        image: asset_path('Person@2x.png'),
-        detailUrl: candidate_path(id: candidate.wikidata_id)
-      %>
-    <% end %>
-
+    <%= render partial: 'candidate', collection: @senkyoku.candidates.order('submission_order ASC') %>
   </div>
 <% else %>
   <p>入力された郵便番号では選挙区は見つかりませんでした</p>

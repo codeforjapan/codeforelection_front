@@ -1,10 +1,13 @@
 <div class="person-block">
   <div class="profile">
-    <div class="typo-text-1"><%= party %> <%= render partial:'layouts/molecules/area-type', locals: { isHirei: isHirei } %></div>
+    <div class="typo-text-1">
+      <%= party %> <%= render partial:'layouts/molecules/area-type', locals: { isHirei: isHirei, isSyosenkyoku: isSyosenkyoku } %>
+    </div>
     <div class="column">
         <div class="typo-1 person-name"><%= name %></div>
         <div class="typo-text-1 person-age"><%= age %></div>
     </div>
+    <div class="typo-3 person-furigana"><%= furigana %></div>
     <div class="typo-text-1 former-job"><%= job %></div>
     <%= render partial:'layouts/molecules/social-icons',
       locals: {
@@ -14,5 +17,5 @@
       }
     %>
   </div>
-  <%= render partial:'layouts/molecules/person', locals: {src: image} %>
+  <!-- <%= render partial:'layouts/molecules/person', locals: {src: image} %> -->
 </div>

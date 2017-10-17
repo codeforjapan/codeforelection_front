@@ -15,14 +15,19 @@
       gtag('js', new Date());
       gtag('config', 'UA-45275834-6');
     </script>
+
+    <meta property="og:title" content="<%= @title %> | <%= APP_TITLE %>">
+    <meta property="og:url" content="https://kouhosha.info/">
+    <meta property="og:image" content="https://kouhosha.info/images/kouhosha_ogp.png">
+    <meta property="og:description" content="このサイトでは、郵便番号からあなたの住む地域の選挙区と立候補者を検索し、その候補者の情報を表示することができます。">
+    <meta property="fb:app_id" content="166634390586314">
+    <meta property="og:type" content="website">
+
   </head>
 
   <body>
+    <%= render 'layouts/organisms/menu' %>
     <%= yield %>
-    <div class="typo-2" id="footer">
-      このサイトで利用している情報は、<a href="http://election.code4japan.org/">Code for 選挙プロジェクト</a>で作られたオープンデータを利用しています。<br/>
-      データに不備を発見した場合や、データ収集に協力いただける方は、<a href="https://github.com/codeforjapan/codeforelection">プロジェクトページ</a>からご連絡ください。<br/>
-      サイト運営：<a href="http://election.code4japan.org/">Code for 選挙プロジェクト</a>
-    </div>
+    <%= render 'layouts/organisms/footer' %>
   </body>
 </html>

@@ -9,16 +9,23 @@ namespace :graydb do
     # CSVダウンロード:複数行項目対策
     csv_url = "https://raw.githubusercontent.com/hkwi/shuin48pre/master/docs/gdoc_gray_db.csv"
     filename = "#{Rails.root}/tmp/download.csv"
+    raw_csv_url = "https://raw.githubusercontent.com/hkwi/shuin48pre/master/docs/database.csv"
+    raw_filename = "#{Rails.root}/public/database.csv"
 
     open(csv_url) do |file|
       open(filename, "w+b") do |out|
        out.write(file.read)
      end
     end
+    open(raw_csv_url) do |file|
+      open(raw_filename, "w+b") do |out|
+       out.write(file.read)
+     end
+    end
 
     csv = CSV.read(filename)
     p header = csv.drop(3).first
-    csv.drop(7).each do |line|
+    csv.drop(6).each do |line|
 
       wikidata_id_buf = line[header.index('UI用DBカラム名')] # wikidata_id
       next unless wikidata_id_buf.present?
@@ -30,13 +37,27 @@ namespace :graydb do
       # 選挙区テーブルからIDを取得
       pref_code_buf = line[header.index('pref_code')].present? ? sprintf("%02d", line[header.index('pref_code')]) : nil
       senkyoku_id_buf = Senkyoku.where(pref_code: pref_code_buf, senkyoku_no: line[header.index('senkyoku_no')]).first
-      gender_buf = line[header.index('gender')] == "男性" ? 1 : 2
+      gender_buf =
+
+      case line[header.index('gender')]
+      when "男性"
+        gender_buf = 1
+      when "女性"
+        gender_buf = 2
+      else
+      end
+
+
       is_candidate_buf = line[header.index('is_candidate')] == '確定' ? true : false
+
+
       case line[header.index('current_position')]
-        when '現職'
+        when '現'
           current_position_buf = 1
         when '新'
           current_position_buf = 2
+        when '元'
+          current_position_buf = 3
         else
       end
 
@@ -70,6 +91,7 @@ namespace :graydb do
           current_position: current_position_buf,
           submission_order: line[header.index('submission_order')],
           hirei_area_id: hirei_area_id_buf,
+          hirei_meibo_order_no: line[header.index('hirei_meibo_order_no')],
           winning_history: line[header.index('winning_history')]
         )
       rescue Exception => e

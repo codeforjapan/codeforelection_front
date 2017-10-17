@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171012045609) do
+ActiveRecord::Schema.define(version: 20171014143033) do
 
-  create_table "candidates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "candidates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "name_first", null: false
     t.string "name_last", null: false
     t.string "name_first_furigana"
@@ -34,10 +34,11 @@ ActiveRecord::Schema.define(version: 20171012045609) do
     t.integer "submission_order"
     t.string "winning_history"
     t.integer "hirei_area_id"
+    t.integer "hirei_meibo_order_no"
     t.index ["wikidata_id"], name: "index_candidates_on_wikidata_id", unique: true
   end
 
-  create_table "cities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "cities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "city_code", null: false
     t.string "pref_code", null: false
     t.string "city_name", null: false
@@ -46,26 +47,26 @@ ActiveRecord::Schema.define(version: 20171012045609) do
     t.index ["city_code"], name: "index_cities_on_city_code", unique: true
   end
 
-  create_table "hirei_senkyokus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "hirei_senkyokus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "name"
     t.integer "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "hirei_senkyokus_prefs", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "hirei_senkyokus_prefs", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.bigint "pref_id", null: false
     t.bigint "hirei_senkyoku_id", null: false
   end
 
-  create_table "parties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "parties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "short_name", null: false
     t.string "full_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "prefs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "prefs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "pref_code", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -73,22 +74,22 @@ ActiveRecord::Schema.define(version: 20171012045609) do
     t.index ["pref_code"], name: "index_prefs_on_pref_code"
   end
 
-  create_table "senkyokus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "senkyokus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "pref_code", null: false
     t.integer "senkyoku_no", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["pref_code", "senkyoku_no"], name: "index_senkyokus_on_pref_code_and_senkyoku_no", unique: true
   end
 
-  create_table "senkyokus_zip_codes", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "senkyokus_zip_codes", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.bigint "senkyoku_id", null: false
     t.bigint "zip_code_id", null: false
+    t.index ["zip_code_id", "senkyoku_id"], name: "index_senkyokus_zip_codes_on_zip_code_id_and_senkyoku_id", unique: true
   end
 
-  create_table "zip_codes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "zip_codes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "zip_code", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "city_id"
     t.index ["zip_code"], name: "index_zip_codes_on_zip_code", unique: true
   end

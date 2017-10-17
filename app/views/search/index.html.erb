@@ -17,7 +17,7 @@
 <h2>molecules</h2>
 <%= render partial:'layouts/molecules/searchbar', locals: {propName:'prop', placeHolder:'郵便番号', val:''} %>
 <%= render partial:'layouts/molecules/person', locals: {src: asset_path('Person@2x.png') } %>
-<%= render partial:'layouts/molecules/area-type', locals: {areaType: '比'} %>
+<%= render partial:'layouts/molecules/area-type', locals: {isHirei: false, isSyosenkyoku: true} %>
 <%= render partial:'layouts/molecules/detail-button', locals: {detailUrl: '/'} %>
 <%= render partial:'layouts/molecules/social-icons',
   locals: {
@@ -36,12 +36,14 @@
 locals: {
     party: '甘党',
     name: '山田太郎',
+    furigana: 'やまだたろう',
     age: '30',
     job: 'ニート',
     isDuplication: false,
     image: asset_path('Person@2x.png'),
     detailUrl: '/',
-    areaType: '比'
+    isHirei: false,
+    areaType: nil
 } %>
 <%= render partial:'layouts/organisms/list-header',
 locals: {
@@ -50,14 +52,22 @@ locals: {
 } %>
 
 <h2>Block</h2>
+
+<%= render 'layouts/senkyokus/senkyoku-block',
+  label_name: '北海道',
+  link_url: "/senkyoku/01"
+%>
+
 <%= render partial:'layouts/organisms/person-block',
 locals: {
     party: '甘党',
     name: '山田太郎',
+    furigana: 'やまだたろう',
     age: '30',
     job: 'ニート',
     image: asset_path('Person@2x.png'),
-    areaType: '比',
+    areaType: nil,
+    isHirei: true,
     facebookLink: '/',
     instagramLink: '/',
     internetLink: '/',
