@@ -1,13 +1,24 @@
+@import "./responsive.sass"
 .typo-1
   font-size: 48px
   font-weight: 600
+  @media #{$sp}
+    font-size: 24px
+  @media #{$xs}
+    font-size: 18px
 
 .typo-2
   font-size: 24px
+  @media #{$sp}
+    font-size: 12px
 
 .typo-3
   font-size: 20px
   font-weight: 600
+  @media #{$sp}
+    font-size: 10px
 
 .typo-text-1
   font-size: 16px
+  @media #{$sp}
+    font-size: 8px
