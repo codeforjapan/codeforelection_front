@@ -9,9 +9,16 @@ namespace :graydb do
     # CSVダウンロード:複数行項目対策
     csv_url = "https://raw.githubusercontent.com/hkwi/shuin48pre/master/docs/gdoc_gray_db.csv"
     filename = "#{Rails.root}/tmp/download.csv"
+    raw_csv_url = "https://raw.githubusercontent.com/hkwi/shuin48pre/master/docs/database.csv"
+    raw_filename = "#{Rails.root}/public/database.csv"
 
     open(csv_url) do |file|
       open(filename, "w+b") do |out|
+       out.write(file.read)
+     end
+    end
+    open(raw_csv_url) do |file|
+      open(raw_filename, "w+b") do |out|
        out.write(file.read)
      end
     end
@@ -84,6 +91,7 @@ namespace :graydb do
           current_position: current_position_buf,
           submission_order: line[header.index('submission_order')],
           hirei_area_id: hirei_area_id_buf,
+          hirei_meibo_order_no: line[header.index('hirei_meibo_order_no')],
           winning_history: line[header.index('winning_history')]
         )
       rescue Exception => e

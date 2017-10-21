@@ -1,7 +1,7 @@
 <section id="top">
   <div class="container">
     <div class="titile">
-      <h1 class="typo-1">2017年衆議院選挙候補者ナビ</h1>
+      <h1 class="typo-1"><%= APP_SUB_TITLE %></h1>
     </div>
     <div class="search-wrapper">
       <h1>郵便番号で検索</h1>
@@ -18,7 +18,9 @@
 
 <section id="area-block">
   <div class="container">
-    <h1>都道府県別</h1>
+
+
+    <h1>小選挙区</h1>
     <div class="prefs">
       <% Pref.all.order(:id).each do |pref| %>
         <%= render 'layouts/senkyokus/senkyoku-block',
@@ -27,5 +29,18 @@
         %>
       <% end %>
     </div>
+
+
+    <h1>比例代表</h1>
+    <div class="prefs">
+      <% HireiSenkyoku.all.order(:id).each do |hirei| %>
+        <%= render 'layouts/hirei-senkyokus/hirei-senkyoku-block',
+          label_name: hirei.name,
+          link_url: hirei_senkyoku_path(hirei.name)
+        %>
+      <% end %>
+    </div>
+
+
   </div>
 </section>

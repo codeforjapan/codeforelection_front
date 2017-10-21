@@ -1,5 +1,24 @@
 <div class="typo-text-1" id="footer">
-  このサイトで利用している情報は、<a href="http://election.code4japan.org/">Code for 選挙プロジェクト</a>で作られたオープンデータを利用しています。<br/>
+  <div class="sns">
+    <div id="twitter">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="kouhoshainfo">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+    <div id="facebook">
+      <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.10";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <div class="fb-share-button" data-href="http://kouhosha.info/" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+          <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fkouhosha.info%2F&amp;src=sdkpreparse">シェア</a>
+        </div>
+    </div>
+  </div>
+  このサイトで利用している情報は、<a href="http://election.code4japan.org/">Code for 選挙プロジェクト</a>で作られたオープンデータを利用しています（<%=link_to 'ダウンロード', 'data' %>）。<br/>
   データに不備を発見した場合や、データ収集に協力いただける方は、<a href="https://github.com/codeforjapan/codeforelection">プロジェクトページ</a>からご連絡ください。<br/>
   サイト運営：<a href="http://election.code4japan.org/">Code for 選挙プロジェクト</a>
 </div>

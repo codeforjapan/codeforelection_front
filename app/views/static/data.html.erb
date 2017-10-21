@@ -1,0 +1,44 @@
+<%= render partial:'layouts/static/default',
+locals: {
+    header: 'データについて',
+} %>
+<section id="area-block">
+  <div class="container">
+    <div class="default">
+    <p>
+本サイトの検索結果として表示されるデータや、一括ダウンロードできるCSVなどのデータは特に断りが無い限り、<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">CC0（いわゆるパブリック・ドメイン相当）</a> の下に公開します。従ってクレジット表記等なしに自由に利用可能で、他のライセンスのコンテンツとの混ぜ合わせ利用も（当方としては）問題ありません。
+なお、Code for 選挙プロジェクトは利用者がコンテンツを用いて行う一切の行為（コンテンツを編集・加工等した情報を利用することを含む。）について何ら責任を負うものではありません。また、コンテンツは、予告なく変更、移転、削除等が行われることがあります。内容の誤りや過不足についてはフィードバックを頂ければ幸いです。
+    </p>
+
+    <h2 class="type-1">ダウンロードできるデータ</h2>
+<p>
+  本サイトのデータは、以下のリンクからダウンロードして利用することができます。<br/>
+  <h3 class="type-1">候補者データ</h3>
+  <a href="/database.csv">候補者データダウンロード</a>
+  <br/><br/>
+  文字コードはUTF8で、以下のデータが含まれています。現在、全てデータが揃っているものと、整備中のものがありますのでお気をつけください。<br/>
+  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXiJhHvQExoG3HBpfWnCfAoa_KE_iAdX5OyCOsMn0UGaPjqZQYmjPe3Ic49wYpX357ukb1IXYvk7uU/pubhtml?gid=1748306210&amp;single=true&amp;widget=true&amp;headers=false" width="620" height="300"></iframe>
+
+  <h3 class="type-1">郵便番号-小選挙区検索データ</h3>
+7桁の郵便番号（事業所番号は除く）から、対応する289選挙区への対応を取れるオープンデータを作成しました。<br/>
+<a href="https://github.com/codeforjapan/codeforelection/blob/master/data/json/postal2senkyoku.json">郵便番号-小選挙区データダウンロード</a>
+<ul>データ仕様
+<li>郵便番号をキーとして格納</li>
+<li>該当郵便番号の基礎自治体の行政コード、および小選挙区番号が含まれます</li>
+<li>都道府県は行政コードからご利用ください。</li>
+</ul>
+データ例
+<pre>
+{
+  "1050000":{"cityCode":"13103","senkyoNum":"1"},
+  "1050001":{"cityCode":"13103","senkyoNum":"2"},
+  "1050002":{"cityCode":"13103","senkyoNum":"2"},
+  //以下略
+}
+</pre>
+<ul>利用した元データ
+  <li><a href="http://www.csis.u-tokyo.ac.jp/~nishizawa/senkyoku/">東大西沢先生作成小選挙区データ</a></li>
+  <li><a href="http://www.post.japanpost.jp/zipcode/download.html">郵便番号</a></li>
+</p>
+  </div>
+</div></section>

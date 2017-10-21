@@ -1,0 +1,15 @@
+<%= render :partial=>'layouts/organisms/list-header', :locals=>{ senkyokuName: @hirei_senkyoku.name} %>
+<div class="container">
+<% if @hirei_senkyoku.present? %>
+  <div class="candidate-wrapper">
+
+    <% @candidates.each do |party| %>
+      <h2 class="hirei_senkyoku_party"><%= party[1].first.party.full_name %></h2>
+      <%= render partial: 'search/candidate', collection: party[1] %>
+    <% end %>
+
+  </div>
+<% else %>
+  <p>入力された郵便番号では選挙区は見つかりませんでした</p>
+<% end %>
+</div>
