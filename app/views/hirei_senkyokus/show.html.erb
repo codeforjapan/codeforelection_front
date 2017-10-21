@@ -1,5 +1,5 @@
 <%= render :partial=>'layouts/organisms/list-header', :locals=>{ senkyokuName: @hirei_senkyoku.name} %>
-
+<div class="container">
 <% if @hirei_senkyoku.present? %>
   <div class="candidate-wrapper">
 
@@ -12,3 +12,4 @@
 <% else %>
   <p>入力された郵便番号では選挙区は見つかりませんでした</p>
 <% end %>
+</div>
