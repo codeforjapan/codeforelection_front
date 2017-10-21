@@ -1,3 +1,4 @@
+@import "../atoms/responsive.sass"
 .person-block
   width: 100%
   height: 380px
@@ -6,6 +7,8 @@
   align-items: center
   justify-content: center
   // margin-right: 30px
+  @media #{$sp}
+    height: 240px
   .profile
     width: 100%
     display: flex

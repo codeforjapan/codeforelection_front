@@ -1,3 +1,4 @@
+@import "../atoms/responsive.sass"
 a.link
   text-decoration: none
 .detail-btn
@@ -6,6 +7,8 @@ a.link
   width: 120px
   height: 40px
   border-radius: 20px
+  @media #{$xs}
+    width: 100px
   p.typo-2
     line-height: 40px
     color: #FFFFFF

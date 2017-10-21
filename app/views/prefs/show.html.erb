@@ -1,12 +1,13 @@
 <%= render :partial=>'layouts/organisms/list-header', :locals=>{ senkyokuName: @pref.name} %>
+<div class="container">
+  <h1>小選挙区</h1>
 
-<h1>小選挙区</h1>
-
-<div class="senkyokus">
-  <% @pref.senkyokus.order('senkyoku_no ASC').each do |senkyoku| %>
-    <%= render 'layouts/senkyokus/senkyoku-block',
-      label_name: "#{senkyoku.senkyoku_no}区",
-      link_url: "/senkyoku/#{@pref.pref_code}/#{senkyoku.senkyoku_no}"
-    %>
-  <% end %>
+  <div class="senkyokus">
+    <% @pref.senkyokus.order('senkyoku_no ASC').each do |senkyoku| %>
+      <%= render 'layouts/senkyokus/senkyoku-block',
+        label_name: "#{senkyoku.senkyoku_no}区",
+        link_url: "/senkyoku/#{@pref.pref_code}/#{senkyoku.senkyoku_no}"
+      %>
+    <% end %>
+  </div>
 </div>
