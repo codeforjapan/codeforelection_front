@@ -1,8 +1,12 @@
+@import "../atoms/responsive.sass"
 .senkyoku-block
   width: 120px
   height: 120px
   background-color: #219653
   margin: 1px
+  @media #{$sp}
+    width: 90px
+    height: 90px
   &:hover
     background-color: #1C7D46
     transition: .1s
@@ -13,6 +17,9 @@
     text-decoration: none
     height: 120px
     line-height: 120px
+    @media #{$sp}
+      height: 90px
+      line-height: 90px
     a
       color: #FFFFFF
       text-decoration: none
