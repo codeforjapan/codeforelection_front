@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.4-node
+        environment:
+          RAILS_ENV: test
+          DB_HOST: 127.0.0.1
     steps:
       - checkout
       - run: bundle install --path vendor/bundle
