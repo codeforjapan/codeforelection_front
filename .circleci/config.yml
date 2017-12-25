@@ -38,7 +38,7 @@ workflows:
       - build-job
       - deploy-job:
         requires:
-          - build
+          - build-job
         filters:
           branches:
             only: production
