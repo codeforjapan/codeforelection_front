@@ -20,21 +20,22 @@ jobs:
           name: Run tests
           command: bundle exec rake test
 
+    deploy:
+      - image: circleci/ruby:2.4-node
+      - checkout
+      - run: bundle exec cap production deploy
+
 workflows:
   version: 2
-  build_and_test:
+  build:
     jobs:
       - build
-#  build-test-and-deploy:
-#    jobs:
-#      - build
-#      - test:
-#        requires:
-#          - build
-#        context: org-global
-#      - deploy:
-#        requires:
-#          - test
-#        filters:
-#          branches:
-#            only: production
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+        requires:
+          - build
+        filters:
+          branches:
+            only: production
