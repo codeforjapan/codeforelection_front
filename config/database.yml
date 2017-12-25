@@ -29,6 +29,7 @@ development:
 test:
   <<: *default
   database: cfje_test
+  password:
   host: <%= ENV['DB_HOST'] || 'db' %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
