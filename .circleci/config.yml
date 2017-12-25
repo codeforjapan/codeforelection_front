@@ -21,12 +21,12 @@ workflows:
     jobs:
       - build
       - test
-  build-test-and-deploy:
-    jobs:
-      - build
-      - test:
-        requires:
-          - build
+#  build-test-and-deploy:
+#    jobs:
+#      - build
+#      - test:
+#        requires:
+#          - build
 #        context: org-global
 #      - deploy:
 #        requires:
