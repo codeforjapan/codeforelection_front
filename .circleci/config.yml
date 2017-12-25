@@ -18,7 +18,7 @@ jobs:
       - run: bundle exec rake graydb:import
       - run:
           name: Run tests
-          command: bundle exec rspec
+          command: bundle exec rake test
 
 workflows:
   version: 2
