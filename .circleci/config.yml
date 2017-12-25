@@ -6,6 +6,7 @@ jobs:
         environment:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
+      - image: circleci/mysql:5.7
     steps:
       - checkout
       - run: bundle install --path vendor/bundle
