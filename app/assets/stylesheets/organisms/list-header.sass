@@ -1,11 +1,16 @@
+@import "../atoms/responsive.sass"
 .list-header
   background-color: #333333
   min-height: 250px
+  @media #{$sp}
+    min-height: 200px
   .header-search-bar
     float: right
     width: 270px
     color: #FFFFFF
     margin: 20px 15px 0
+    @media #{$sp}
+      width: 180px
     .search-bar
       width: 100%
       background: none
@@ -13,11 +18,16 @@
       background: none
       color: #FFFFFF
       margin: 0 15px
+      @media #{$sp}
+        font-size: 14px
   .header-senkyoku-name
     padding-top: 55px
     text-align: center
     font-size: 42px
     color: #FFFFFF
+    @media #{$sp}
+      padding-top: 74px
+      font-size: 30px
   .header-title
     padding-top: 55px
     text-align: center
