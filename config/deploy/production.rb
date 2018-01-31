@@ -6,7 +6,7 @@ set :branch, 'production'
 # You can define all roles on a single server, or split them:
 
 # deploy先のサーバー情報を記載
-server '153.127.193.108', user: 'deployer', roles: %w{app db web}
+server '52.197.226.34', user: 'deployer', roles: %w{app db web}
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
