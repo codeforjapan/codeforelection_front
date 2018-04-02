@@ -1,0 +1,5 @@
+production:
+  fluent_host:   'localhost'
+  fluent_port:   24224
+  tag:           'rails.tag'
+  messages_type: 'string'
