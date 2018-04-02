@@ -42,6 +42,7 @@ gem 'capistrano-rails','~> 1.1.6', require: false
 gem 'capistrano-bundler','~> 1.1.4', require: false
 gem 'rvm1-capistrano3','~> 1.4.0', require: false
 gem 'unicorn'
+gem 'lograge'
 gem 'act-fluent-logger-rails'
 
 group :development, :test do
