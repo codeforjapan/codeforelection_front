@@ -25,3 +25,4 @@ dist
 
 .ssh/id_rsa
 vendor/ruby
+vendor/bundle
