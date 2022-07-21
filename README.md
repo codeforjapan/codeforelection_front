@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/codeforjapan/codeforelection_front/tree/production.svg?style=svg)](https://circleci.com/gh/codeforjapan/codeforelection_front/tree/production)
 
 ## Code for 選挙プロジェクトへようこそ
-| ⚠️ This repository will be archived in the future, this config will no longer be maintained. Thanks for all the stars, help and brainstorms! |
+| ⚠️ This repository has been archived and will no longer be maintained. Thanks for all the stars, help and brainstorms! |
 
 
 Code for 選挙プロジェクトは、2017年衆議院選挙候補者のオープンなデータベースを作り、候補者の政策及び過去の実績を中立的に参照できるサイトを制作することを目的としています。
